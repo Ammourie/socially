@@ -50,19 +50,20 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCPd1aRGiLMcif8MQeGANZHEzKIo3OwoDo',
-    appId: '1:863425147036:android:719b710a0df70f32703d59',
-    messagingSenderId: '863425147036',
-    projectId: 'starter-6c0bd',
-    storageBucket: 'starter-6c0bd.appspot.com',
+    apiKey: 'AIzaSyBPMoFUshdaM8-013H65Q58l-hDXURAjZ8',
+    appId: '1:470049118469:android:863b823c384d97087eff6c',
+    messagingSenderId: '470049118469',
+    projectId: 'ammourie-portfolio',
+    storageBucket: 'ammourie-portfolio.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCVpSDoTnZrfzQiQaXmWoTtjJid6440zE8',
-    appId: '1:863425147036:ios:f3eae435021f26ae703d59',
-    messagingSenderId: '863425147036',
-    projectId: 'starter-6c0bd',
-    storageBucket: 'starter-6c0bd.appspot.com',
-    iosBundleId: 'com.osoustech.starter',
+    apiKey: 'AIzaSyAl81C_900YKb2rm-Rkqw1Id_RfDhvBVXQ',
+    appId: '1:470049118469:ios:a02185858d485bed7eff6c',
+    messagingSenderId: '470049118469',
+    projectId: 'ammourie-portfolio',
+    storageBucket: 'ammourie-portfolio.firebasestorage.app',
+    iosBundleId: 'com.test.socially',
   );
+
 }
