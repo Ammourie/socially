@@ -18,6 +18,11 @@ class HomeState with _$HomeState {
       PeopleListLoadedState;
 
   const factory HomeState.commentsLoadedState(List<CommentsEntity> comments) =
-  CommentsLoadedState;
-}
+      CommentsLoadedState;
 
+  const factory HomeState.postsLoadedState(List<PostEntity> posts) =
+      PostsLoadedState;
+
+  const factory HomeState.storiesLoadedState(List<StoryEntity> stories) =
+      StoriesLoadedState;
+}

@@ -33,6 +33,10 @@ import 'package:socially/features/home/domain/usecase/comments_usecase.dart'
     as _i82;
 import 'package:socially/features/home/domain/usecase/get_people_usecase.dart'
     as _i242;
+import 'package:socially/features/home/domain/usecase/get_posts_usecase.dart'
+    as _i678;
+import 'package:socially/features/home/domain/usecase/get_stories_usecase.dart'
+    as _i403;
 import 'package:socially/features/home/domain/usecase/test_failure_usecase.dart'
     as _i71;
 import 'package:socially/features/home/domain/usecase/test_success_usecase.dart'
@@ -103,6 +107,10 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i82.CommentsUseCase(gh<_i433.IHomeRepository>()));
     gh.factory<_i242.GetPeopleUseCase>(
         () => _i242.GetPeopleUseCase(gh<_i433.IHomeRepository>()));
+    gh.factory<_i678.GetPostsUseCase>(
+        () => _i678.GetPostsUseCase(gh<_i433.IHomeRepository>()));
+    gh.factory<_i403.GetStoriesUseCase>(
+        () => _i403.GetStoriesUseCase(gh<_i433.IHomeRepository>()));
     gh.factory<_i71.TestFailureUseCase>(
         () => _i71.TestFailureUseCase(gh<_i433.IHomeRepository>()));
     gh.factory<_i1068.TestSuccessUseCase>(

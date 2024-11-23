@@ -17,6 +17,7 @@ class StoriesListWidget extends StatelessWidget {
   final List<StoryEntity> stories;
   final Color? backgroundColor;
   final void Function(StoryEntity story)? onStoryTap;
+  final Widget? spacingWidget;
 
   const StoriesListWidget({
     super.key,
@@ -32,6 +33,7 @@ class StoriesListWidget extends StatelessWidget {
     this.fontWeight,
     this.backgroundColor,
     this.onStoryTap,
+    this.spacingWidget,
   });
 
   @override
@@ -50,7 +52,7 @@ class StoriesListWidget extends StatelessWidget {
   BoxDecoration _buildDecoration(BuildContext context) {
     return BoxDecoration(
       color: backgroundColor ?? Colors.white.withOpacity(0.1),
-      borderRadius: BorderRadius.circular(borderRadius ?? 100.r),
+      borderRadius: BorderRadius.circular(borderRadius ?? 10000.r),
       border: Border.all(
         color: borderColor ?? Colors.transparent,
         width: borderWidth ?? 1,
@@ -63,7 +65,7 @@ class StoriesListWidget extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       itemCount: stories.length,
       itemBuilder: _buildStoryItem,
-      separatorBuilder: (context, index) => 50.horizontalSpace,
+      separatorBuilder: (context, index) => spacingWidget ?? 50.horizontalSpace,
     );
   }
 
@@ -72,8 +74,8 @@ class StoriesListWidget extends StatelessWidget {
     return GestureDetector(
       onTap: () => onStoryTap?.call(story),
       child: Container(
-        width: 170.sp,
-        height: 170.sp,
+        width: 3 * (height ?? 220.sp) / 4,
+        height: 3 * (height ?? 220.sp) / 4,
         margin: EdgeInsetsDirectional.only(
           start: index == 0 ? 20.sp : 0,
           end: index == stories.length - 1 ? 20.sp : 0,

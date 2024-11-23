@@ -10,8 +10,12 @@ import '../../../data/request/param/mock_request.dart';
 import '../../../data/request/model/people_model.dart';
 import '../../../domain/entity/comments_entity.dart';
 import '../../../domain/entity/people_entity.dart';
+import '../../../domain/entity/post_entity.dart';
+import '../../../domain/entity/story_entity.dart';
 import '../../../domain/usecase/comments_usecase.dart';
 import '../../../domain/usecase/get_people_usecase.dart';
+import '../../../domain/usecase/get_posts_usecase.dart';
+import '../../../domain/usecase/get_stories_usecase.dart';
 import '../../../domain/usecase/test_success_usecase.dart';
 import '../../../domain/usecase/test_validator_usecase.dart';
 
@@ -139,6 +143,35 @@ class HomeCubit extends Cubit<HomeState> {
       },
       onError: (error) {
         emit(HomeState.homeErrorState(result.error!, () => this.getComments()));
+      },
+    );
+  }
+
+  void getPosts() async {
+    emit(const HomeState.homeLoadingState());
+
+    final result = await getIt<GetPostsUseCase>().call(NoParams());
+    result.pick(
+      onData: (data) {
+        emit(HomeState.postsLoadedState(result.data!));
+      },
+      onError: (error) {
+        emit(HomeState.homeErrorState(result.error!, () => this.getPosts()));
+      },
+    );
+  }
+
+  void getStories() async {
+    emit(const HomeState.homeLoadingState());
+
+    final result = await getIt<GetStoriesUseCase>().call(NoParams());
+
+    result.pick(
+      onData: (data) {
+        emit(HomeState.storiesLoadedState(result.data!));
+      },
+      onError: (error) {
+        emit(HomeState.homeErrorState(error, () => this.getStories()));
       },
     );
   }

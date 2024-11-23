@@ -39,4 +39,18 @@ class HomeRepository extends IHomeRepository {
     final remote = await remoteDataSource.getComments();
     return executeForList<CommentsModel, CommentsEntity>(remoteResult: remote);
   }
+
+  @override
+  Future<Result<AppErrors, List<PostEntity>>> getPosts(
+      NoParams noParams) async {
+    final remote = await remoteDataSource.getPosts(noParams);
+    return executeForList<PostModel, PostEntity>(remoteResult: remote);
+  }
+
+  @override
+  Future<Result<AppErrors, List<StoryEntity>>> getStories(
+      NoParams noParams) async {
+    final remote = await remoteDataSource.getStories(noParams);
+    return executeForList<StoryModel, StoryEntity>(remoteResult: remote);
+  }
 }

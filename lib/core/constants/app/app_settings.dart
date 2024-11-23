@@ -9,7 +9,7 @@ class AppSettings {
   static const BASE_URL = "https://app.fakejson.com/q";
 
   /// Constants
-  static const orientation = OrientationOptions.PORTRAIT;
+  static const orientation = OrientationOptions.BOTH;
   static const errorViewOption = ErrorWidgetOptions.IMAGE;
   static const changeLangRestart = true;
   static const enableDioPrinting = true;

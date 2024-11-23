@@ -132,10 +132,11 @@ class _AppMainScreenState extends State<AppMainScreen> {
         ),
         child: ClipRRect(
           borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(30.sp),
-            topRight: Radius.circular(30.sp),
+            topLeft: Radius.circular(30.r),
+            topRight: Radius.circular(30.r),
           ),
           child: NavigationBar(
+            height: 150.h,
             indicatorColor: Colors.transparent,
             labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
             destinations: _buildNavigationBarDestinations(),
@@ -191,7 +192,7 @@ class _AppMainScreenState extends State<AppMainScreen> {
   }
 
   List<NavigationDestination> _buildNavigationBarDestinations() {
-    double iconSize = 60.sp;
+    double iconSize = 80.sp;
     Color iconColor = AppColors.navBarIconColor;
     return [
       NavigationDestination(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
@@ -22,15 +23,16 @@ class HomeScreen extends BaseScreen<HomeScreenParam> {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final provider = HomeScreenNotifier();
+  final sn = HomeScreenNotifier();
   @override
   void initState() {
     super.initState();
+    sn.getHomeData();
   }
 
   @override
   void dispose() {
-    provider.closeNotifier();
+    sn.closeNotifier();
     super.dispose();
   }
 
@@ -39,23 +41,40 @@ class _HomeScreenState extends State<HomeScreen> {
     return OrientationBuilder(
       builder: (context, _) {
         return ChangeNotifierProvider<HomeScreenNotifier>.value(
-          value: provider,
-          child: BlocListener<HomeCubit, HomeState>(
-            bloc: provider.homeCubit,
-            listener: (context, state) {
-              state.when(
-                homeInitState: () {},
-                homeLoadingState: provider.homeLoadingStateListener,
-                homeLoadedState: (s) {
-                  provider.homeLoadedStateListener(s);
+          value: sn,
+          builder: (context, child) {
+            context
+                .select<HomeScreenNotifier, bool>((value) => value.isLoading);
+            return ModalProgressHUD(
+              inAsyncCall: sn.isLoading,
+              child: child!,
+            );
+          },
+          child: MultiBlocListener(
+            listeners: [
+              BlocListener<HomeCubit, HomeState>(
+                bloc: sn.postsCubit,
+                listener: (context, state) {
+                  state.maybeWhen(
+                    orElse: () {},
+                    postsLoadedState: (posts) {
+                      sn.posts = posts;
+                    },
+                  );
                 },
-                homeErrorState: (error, callback) {
-                  provider.homeErrorStateListener(context, error, callback);
+              ),
+              BlocListener<HomeCubit, HomeState>(
+                bloc: sn.storiesCubit,
+                listener: (context, state) {
+                  state.maybeWhen(
+                    orElse: () {},
+                    storiesLoadedState: (stories) {
+                      sn.stories = stories;
+                    },
+                  );
                 },
-                peopleListLoadedState: (data) {},
-                commentsLoadedState: (_) {},
-              );
-            },
+              ),
+            ],
             child: ScreenTypeLayout.builder(
               mobile: (_) => const HomeScreenMobile(),
               tablet: (_) => const HomeScreenTablet(),

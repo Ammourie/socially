@@ -6,11 +6,9 @@ import '../../di/service_locator.dart';
 import '../../features/account/presentation/screen/login_screen.dart';
 import '../../features/account/presentation/screen/register_screen.dart';
 import '../../features/home/presentation/screen/app_main_screen/app_main_screen.dart';
-import '../../features/home/presentation/screen/comments_screen.dart';
 import '../../features/home/presentation/screen/home_screen/home_screen.dart';
 import '../../features/home/presentation/screen/map_screen.dart';
 import '../../features/notification/presentation/screen/notifications/notifications_screen.dart';
-import '../../features/home/presentation/screen/people_screen.dart';
 import '../constants/enums/route_type.dart';
 import '../ui/screens/base_screen.dart';
 import 'animations/animated_route.dart';
@@ -47,15 +45,7 @@ class NavigationRoute {
         return _getRoute<HomeScreenParam>(
             settings: settings,
             createScreen: (param) => HomeScreen(param: param));
-      case PeopleScreen.routeName:
-        return _getRoute<PeopleScreenParam>(
-            settings: settings,
-            createScreen: (param) => PeopleScreen(param: param));
 
-      case CommentsScreen.routeName:
-        return _getRoute<CommentsScreenParam>(
-            settings: settings,
-            createScreen: (param) => CommentsScreen(param: param));
       case MapScreen.routeName:
         return _getRoute<MapScreenParam>(
             settings: settings,

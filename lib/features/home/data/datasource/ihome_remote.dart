@@ -1,7 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
+import 'package:socially/core/params/no_params.dart';
 
 import '../../../../core/constants/enums/http_method.dart';
+import '../../../../core/constants/enums/media_type.dart';
 import '../../../../core/datasources/remote_data_source.dart';
 import '../../../../core/errors/app_errors.dart';
 import '../../../../core/models/empty_response.dart';
@@ -9,6 +11,8 @@ import '../../../../core/net/api_url.dart';
 import '../../../../core/net/response_validators/test_response_validator.dart';
 import '../request/model/comments_model.dart';
 import '../request/model/people_model.dart';
+import '../request/model/post_model.dart';
+import '../request/model/story_model.dart';
 import '../request/param/mock_request.dart';
 
 part 'home_remote.dart';
@@ -21,4 +25,7 @@ abstract class IHomeRemoteSource extends RemoteDataSource {
       MockRequest mockRequest);
   Future<Either<AppErrors, PeopleDataModel>> getPeople(MockRequest mockRequest);
   Future<Either<AppErrors, List<CommentsModel>>> getComments();
+  //////
+  Future<Either<AppErrors, List<PostModel>>> getPosts(NoParams params);
+  Future<Either<AppErrors, List<StoryModel>>> getStories(NoParams params);
 }

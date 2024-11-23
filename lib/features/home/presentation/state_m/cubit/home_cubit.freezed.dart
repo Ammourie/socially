@@ -26,6 +26,8 @@ mixin _$HomeState {
     required TResult Function(PeopleDataEntity data) peopleListLoadedState,
     required TResult Function(List<CommentsEntity> comments)
         commentsLoadedState,
+    required TResult Function(List<PostEntity> posts) postsLoadedState,
+    required TResult Function(List<StoryEntity> stories) storiesLoadedState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -36,6 +38,8 @@ mixin _$HomeState {
     TResult? Function(AppErrors error, VoidCallback callback)? homeErrorState,
     TResult? Function(PeopleDataEntity data)? peopleListLoadedState,
     TResult? Function(List<CommentsEntity> comments)? commentsLoadedState,
+    TResult? Function(List<PostEntity> posts)? postsLoadedState,
+    TResult? Function(List<StoryEntity> stories)? storiesLoadedState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -46,6 +50,8 @@ mixin _$HomeState {
     TResult Function(AppErrors error, VoidCallback callback)? homeErrorState,
     TResult Function(PeopleDataEntity data)? peopleListLoadedState,
     TResult Function(List<CommentsEntity> comments)? commentsLoadedState,
+    TResult Function(List<PostEntity> posts)? postsLoadedState,
+    TResult Function(List<StoryEntity> stories)? storiesLoadedState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -58,6 +64,8 @@ mixin _$HomeState {
     required TResult Function(PeopleListLoadedState value)
         peopleListLoadedState,
     required TResult Function(CommentsLoadedState value) commentsLoadedState,
+    required TResult Function(PostsLoadedState value) postsLoadedState,
+    required TResult Function(StoriesLoadedState value) storiesLoadedState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -68,6 +76,8 @@ mixin _$HomeState {
     TResult? Function(HomeErrorInitState value)? homeErrorState,
     TResult? Function(PeopleListLoadedState value)? peopleListLoadedState,
     TResult? Function(CommentsLoadedState value)? commentsLoadedState,
+    TResult? Function(PostsLoadedState value)? postsLoadedState,
+    TResult? Function(StoriesLoadedState value)? storiesLoadedState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -78,6 +88,8 @@ mixin _$HomeState {
     TResult Function(HomeErrorInitState value)? homeErrorState,
     TResult Function(PeopleListLoadedState value)? peopleListLoadedState,
     TResult Function(CommentsLoadedState value)? commentsLoadedState,
+    TResult Function(PostsLoadedState value)? postsLoadedState,
+    TResult Function(StoriesLoadedState value)? storiesLoadedState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -146,6 +158,8 @@ class _$HomeInitStateImpl implements HomeInitState {
     required TResult Function(PeopleDataEntity data) peopleListLoadedState,
     required TResult Function(List<CommentsEntity> comments)
         commentsLoadedState,
+    required TResult Function(List<PostEntity> posts) postsLoadedState,
+    required TResult Function(List<StoryEntity> stories) storiesLoadedState,
   }) {
     return homeInitState();
   }
@@ -159,6 +173,8 @@ class _$HomeInitStateImpl implements HomeInitState {
     TResult? Function(AppErrors error, VoidCallback callback)? homeErrorState,
     TResult? Function(PeopleDataEntity data)? peopleListLoadedState,
     TResult? Function(List<CommentsEntity> comments)? commentsLoadedState,
+    TResult? Function(List<PostEntity> posts)? postsLoadedState,
+    TResult? Function(List<StoryEntity> stories)? storiesLoadedState,
   }) {
     return homeInitState?.call();
   }
@@ -172,6 +188,8 @@ class _$HomeInitStateImpl implements HomeInitState {
     TResult Function(AppErrors error, VoidCallback callback)? homeErrorState,
     TResult Function(PeopleDataEntity data)? peopleListLoadedState,
     TResult Function(List<CommentsEntity> comments)? commentsLoadedState,
+    TResult Function(List<PostEntity> posts)? postsLoadedState,
+    TResult Function(List<StoryEntity> stories)? storiesLoadedState,
     required TResult orElse(),
   }) {
     if (homeInitState != null) {
@@ -190,6 +208,8 @@ class _$HomeInitStateImpl implements HomeInitState {
     required TResult Function(PeopleListLoadedState value)
         peopleListLoadedState,
     required TResult Function(CommentsLoadedState value) commentsLoadedState,
+    required TResult Function(PostsLoadedState value) postsLoadedState,
+    required TResult Function(StoriesLoadedState value) storiesLoadedState,
   }) {
     return homeInitState(this);
   }
@@ -203,6 +223,8 @@ class _$HomeInitStateImpl implements HomeInitState {
     TResult? Function(HomeErrorInitState value)? homeErrorState,
     TResult? Function(PeopleListLoadedState value)? peopleListLoadedState,
     TResult? Function(CommentsLoadedState value)? commentsLoadedState,
+    TResult? Function(PostsLoadedState value)? postsLoadedState,
+    TResult? Function(StoriesLoadedState value)? storiesLoadedState,
   }) {
     return homeInitState?.call(this);
   }
@@ -216,6 +238,8 @@ class _$HomeInitStateImpl implements HomeInitState {
     TResult Function(HomeErrorInitState value)? homeErrorState,
     TResult Function(PeopleListLoadedState value)? peopleListLoadedState,
     TResult Function(CommentsLoadedState value)? commentsLoadedState,
+    TResult Function(PostsLoadedState value)? postsLoadedState,
+    TResult Function(StoriesLoadedState value)? storiesLoadedState,
     required TResult orElse(),
   }) {
     if (homeInitState != null) {
@@ -275,6 +299,8 @@ class _$HomeLoadingStateImpl implements HomeLoadingState {
     required TResult Function(PeopleDataEntity data) peopleListLoadedState,
     required TResult Function(List<CommentsEntity> comments)
         commentsLoadedState,
+    required TResult Function(List<PostEntity> posts) postsLoadedState,
+    required TResult Function(List<StoryEntity> stories) storiesLoadedState,
   }) {
     return homeLoadingState();
   }
@@ -288,6 +314,8 @@ class _$HomeLoadingStateImpl implements HomeLoadingState {
     TResult? Function(AppErrors error, VoidCallback callback)? homeErrorState,
     TResult? Function(PeopleDataEntity data)? peopleListLoadedState,
     TResult? Function(List<CommentsEntity> comments)? commentsLoadedState,
+    TResult? Function(List<PostEntity> posts)? postsLoadedState,
+    TResult? Function(List<StoryEntity> stories)? storiesLoadedState,
   }) {
     return homeLoadingState?.call();
   }
@@ -301,6 +329,8 @@ class _$HomeLoadingStateImpl implements HomeLoadingState {
     TResult Function(AppErrors error, VoidCallback callback)? homeErrorState,
     TResult Function(PeopleDataEntity data)? peopleListLoadedState,
     TResult Function(List<CommentsEntity> comments)? commentsLoadedState,
+    TResult Function(List<PostEntity> posts)? postsLoadedState,
+    TResult Function(List<StoryEntity> stories)? storiesLoadedState,
     required TResult orElse(),
   }) {
     if (homeLoadingState != null) {
@@ -319,6 +349,8 @@ class _$HomeLoadingStateImpl implements HomeLoadingState {
     required TResult Function(PeopleListLoadedState value)
         peopleListLoadedState,
     required TResult Function(CommentsLoadedState value) commentsLoadedState,
+    required TResult Function(PostsLoadedState value) postsLoadedState,
+    required TResult Function(StoriesLoadedState value) storiesLoadedState,
   }) {
     return homeLoadingState(this);
   }
@@ -332,6 +364,8 @@ class _$HomeLoadingStateImpl implements HomeLoadingState {
     TResult? Function(HomeErrorInitState value)? homeErrorState,
     TResult? Function(PeopleListLoadedState value)? peopleListLoadedState,
     TResult? Function(CommentsLoadedState value)? commentsLoadedState,
+    TResult? Function(PostsLoadedState value)? postsLoadedState,
+    TResult? Function(StoriesLoadedState value)? storiesLoadedState,
   }) {
     return homeLoadingState?.call(this);
   }
@@ -345,6 +379,8 @@ class _$HomeLoadingStateImpl implements HomeLoadingState {
     TResult Function(HomeErrorInitState value)? homeErrorState,
     TResult Function(PeopleListLoadedState value)? peopleListLoadedState,
     TResult Function(CommentsLoadedState value)? commentsLoadedState,
+    TResult Function(PostsLoadedState value)? postsLoadedState,
+    TResult Function(StoriesLoadedState value)? storiesLoadedState,
     required TResult orElse(),
   }) {
     if (homeLoadingState != null) {
@@ -432,6 +468,8 @@ class _$HomeLoadedStateImpl implements HomeLoadedState {
     required TResult Function(PeopleDataEntity data) peopleListLoadedState,
     required TResult Function(List<CommentsEntity> comments)
         commentsLoadedState,
+    required TResult Function(List<PostEntity> posts) postsLoadedState,
+    required TResult Function(List<StoryEntity> stories) storiesLoadedState,
   }) {
     return homeLoadedState(emptyResponse);
   }
@@ -445,6 +483,8 @@ class _$HomeLoadedStateImpl implements HomeLoadedState {
     TResult? Function(AppErrors error, VoidCallback callback)? homeErrorState,
     TResult? Function(PeopleDataEntity data)? peopleListLoadedState,
     TResult? Function(List<CommentsEntity> comments)? commentsLoadedState,
+    TResult? Function(List<PostEntity> posts)? postsLoadedState,
+    TResult? Function(List<StoryEntity> stories)? storiesLoadedState,
   }) {
     return homeLoadedState?.call(emptyResponse);
   }
@@ -458,6 +498,8 @@ class _$HomeLoadedStateImpl implements HomeLoadedState {
     TResult Function(AppErrors error, VoidCallback callback)? homeErrorState,
     TResult Function(PeopleDataEntity data)? peopleListLoadedState,
     TResult Function(List<CommentsEntity> comments)? commentsLoadedState,
+    TResult Function(List<PostEntity> posts)? postsLoadedState,
+    TResult Function(List<StoryEntity> stories)? storiesLoadedState,
     required TResult orElse(),
   }) {
     if (homeLoadedState != null) {
@@ -476,6 +518,8 @@ class _$HomeLoadedStateImpl implements HomeLoadedState {
     required TResult Function(PeopleListLoadedState value)
         peopleListLoadedState,
     required TResult Function(CommentsLoadedState value) commentsLoadedState,
+    required TResult Function(PostsLoadedState value) postsLoadedState,
+    required TResult Function(StoriesLoadedState value) storiesLoadedState,
   }) {
     return homeLoadedState(this);
   }
@@ -489,6 +533,8 @@ class _$HomeLoadedStateImpl implements HomeLoadedState {
     TResult? Function(HomeErrorInitState value)? homeErrorState,
     TResult? Function(PeopleListLoadedState value)? peopleListLoadedState,
     TResult? Function(CommentsLoadedState value)? commentsLoadedState,
+    TResult? Function(PostsLoadedState value)? postsLoadedState,
+    TResult? Function(StoriesLoadedState value)? storiesLoadedState,
   }) {
     return homeLoadedState?.call(this);
   }
@@ -502,6 +548,8 @@ class _$HomeLoadedStateImpl implements HomeLoadedState {
     TResult Function(HomeErrorInitState value)? homeErrorState,
     TResult Function(PeopleListLoadedState value)? peopleListLoadedState,
     TResult Function(CommentsLoadedState value)? commentsLoadedState,
+    TResult Function(PostsLoadedState value)? postsLoadedState,
+    TResult Function(StoriesLoadedState value)? storiesLoadedState,
     required TResult orElse(),
   }) {
     if (homeLoadedState != null) {
@@ -613,6 +661,8 @@ class _$HomeErrorInitStateImpl implements HomeErrorInitState {
     required TResult Function(PeopleDataEntity data) peopleListLoadedState,
     required TResult Function(List<CommentsEntity> comments)
         commentsLoadedState,
+    required TResult Function(List<PostEntity> posts) postsLoadedState,
+    required TResult Function(List<StoryEntity> stories) storiesLoadedState,
   }) {
     return homeErrorState(error, callback);
   }
@@ -626,6 +676,8 @@ class _$HomeErrorInitStateImpl implements HomeErrorInitState {
     TResult? Function(AppErrors error, VoidCallback callback)? homeErrorState,
     TResult? Function(PeopleDataEntity data)? peopleListLoadedState,
     TResult? Function(List<CommentsEntity> comments)? commentsLoadedState,
+    TResult? Function(List<PostEntity> posts)? postsLoadedState,
+    TResult? Function(List<StoryEntity> stories)? storiesLoadedState,
   }) {
     return homeErrorState?.call(error, callback);
   }
@@ -639,6 +691,8 @@ class _$HomeErrorInitStateImpl implements HomeErrorInitState {
     TResult Function(AppErrors error, VoidCallback callback)? homeErrorState,
     TResult Function(PeopleDataEntity data)? peopleListLoadedState,
     TResult Function(List<CommentsEntity> comments)? commentsLoadedState,
+    TResult Function(List<PostEntity> posts)? postsLoadedState,
+    TResult Function(List<StoryEntity> stories)? storiesLoadedState,
     required TResult orElse(),
   }) {
     if (homeErrorState != null) {
@@ -657,6 +711,8 @@ class _$HomeErrorInitStateImpl implements HomeErrorInitState {
     required TResult Function(PeopleListLoadedState value)
         peopleListLoadedState,
     required TResult Function(CommentsLoadedState value) commentsLoadedState,
+    required TResult Function(PostsLoadedState value) postsLoadedState,
+    required TResult Function(StoriesLoadedState value) storiesLoadedState,
   }) {
     return homeErrorState(this);
   }
@@ -670,6 +726,8 @@ class _$HomeErrorInitStateImpl implements HomeErrorInitState {
     TResult? Function(HomeErrorInitState value)? homeErrorState,
     TResult? Function(PeopleListLoadedState value)? peopleListLoadedState,
     TResult? Function(CommentsLoadedState value)? commentsLoadedState,
+    TResult? Function(PostsLoadedState value)? postsLoadedState,
+    TResult? Function(StoriesLoadedState value)? storiesLoadedState,
   }) {
     return homeErrorState?.call(this);
   }
@@ -683,6 +741,8 @@ class _$HomeErrorInitStateImpl implements HomeErrorInitState {
     TResult Function(HomeErrorInitState value)? homeErrorState,
     TResult Function(PeopleListLoadedState value)? peopleListLoadedState,
     TResult Function(CommentsLoadedState value)? commentsLoadedState,
+    TResult Function(PostsLoadedState value)? postsLoadedState,
+    TResult Function(StoriesLoadedState value)? storiesLoadedState,
     required TResult orElse(),
   }) {
     if (homeErrorState != null) {
@@ -778,6 +838,8 @@ class _$PeopleListLoadedStateImpl implements PeopleListLoadedState {
     required TResult Function(PeopleDataEntity data) peopleListLoadedState,
     required TResult Function(List<CommentsEntity> comments)
         commentsLoadedState,
+    required TResult Function(List<PostEntity> posts) postsLoadedState,
+    required TResult Function(List<StoryEntity> stories) storiesLoadedState,
   }) {
     return peopleListLoadedState(data);
   }
@@ -791,6 +853,8 @@ class _$PeopleListLoadedStateImpl implements PeopleListLoadedState {
     TResult? Function(AppErrors error, VoidCallback callback)? homeErrorState,
     TResult? Function(PeopleDataEntity data)? peopleListLoadedState,
     TResult? Function(List<CommentsEntity> comments)? commentsLoadedState,
+    TResult? Function(List<PostEntity> posts)? postsLoadedState,
+    TResult? Function(List<StoryEntity> stories)? storiesLoadedState,
   }) {
     return peopleListLoadedState?.call(data);
   }
@@ -804,6 +868,8 @@ class _$PeopleListLoadedStateImpl implements PeopleListLoadedState {
     TResult Function(AppErrors error, VoidCallback callback)? homeErrorState,
     TResult Function(PeopleDataEntity data)? peopleListLoadedState,
     TResult Function(List<CommentsEntity> comments)? commentsLoadedState,
+    TResult Function(List<PostEntity> posts)? postsLoadedState,
+    TResult Function(List<StoryEntity> stories)? storiesLoadedState,
     required TResult orElse(),
   }) {
     if (peopleListLoadedState != null) {
@@ -822,6 +888,8 @@ class _$PeopleListLoadedStateImpl implements PeopleListLoadedState {
     required TResult Function(PeopleListLoadedState value)
         peopleListLoadedState,
     required TResult Function(CommentsLoadedState value) commentsLoadedState,
+    required TResult Function(PostsLoadedState value) postsLoadedState,
+    required TResult Function(StoriesLoadedState value) storiesLoadedState,
   }) {
     return peopleListLoadedState(this);
   }
@@ -835,6 +903,8 @@ class _$PeopleListLoadedStateImpl implements PeopleListLoadedState {
     TResult? Function(HomeErrorInitState value)? homeErrorState,
     TResult? Function(PeopleListLoadedState value)? peopleListLoadedState,
     TResult? Function(CommentsLoadedState value)? commentsLoadedState,
+    TResult? Function(PostsLoadedState value)? postsLoadedState,
+    TResult? Function(StoriesLoadedState value)? storiesLoadedState,
   }) {
     return peopleListLoadedState?.call(this);
   }
@@ -848,6 +918,8 @@ class _$PeopleListLoadedStateImpl implements PeopleListLoadedState {
     TResult Function(HomeErrorInitState value)? homeErrorState,
     TResult Function(PeopleListLoadedState value)? peopleListLoadedState,
     TResult Function(CommentsLoadedState value)? commentsLoadedState,
+    TResult Function(PostsLoadedState value)? postsLoadedState,
+    TResult Function(StoriesLoadedState value)? storiesLoadedState,
     required TResult orElse(),
   }) {
     if (peopleListLoadedState != null) {
@@ -947,6 +1019,8 @@ class _$CommentsLoadedStateImpl implements CommentsLoadedState {
     required TResult Function(PeopleDataEntity data) peopleListLoadedState,
     required TResult Function(List<CommentsEntity> comments)
         commentsLoadedState,
+    required TResult Function(List<PostEntity> posts) postsLoadedState,
+    required TResult Function(List<StoryEntity> stories) storiesLoadedState,
   }) {
     return commentsLoadedState(comments);
   }
@@ -960,6 +1034,8 @@ class _$CommentsLoadedStateImpl implements CommentsLoadedState {
     TResult? Function(AppErrors error, VoidCallback callback)? homeErrorState,
     TResult? Function(PeopleDataEntity data)? peopleListLoadedState,
     TResult? Function(List<CommentsEntity> comments)? commentsLoadedState,
+    TResult? Function(List<PostEntity> posts)? postsLoadedState,
+    TResult? Function(List<StoryEntity> stories)? storiesLoadedState,
   }) {
     return commentsLoadedState?.call(comments);
   }
@@ -973,6 +1049,8 @@ class _$CommentsLoadedStateImpl implements CommentsLoadedState {
     TResult Function(AppErrors error, VoidCallback callback)? homeErrorState,
     TResult Function(PeopleDataEntity data)? peopleListLoadedState,
     TResult Function(List<CommentsEntity> comments)? commentsLoadedState,
+    TResult Function(List<PostEntity> posts)? postsLoadedState,
+    TResult Function(List<StoryEntity> stories)? storiesLoadedState,
     required TResult orElse(),
   }) {
     if (commentsLoadedState != null) {
@@ -991,6 +1069,8 @@ class _$CommentsLoadedStateImpl implements CommentsLoadedState {
     required TResult Function(PeopleListLoadedState value)
         peopleListLoadedState,
     required TResult Function(CommentsLoadedState value) commentsLoadedState,
+    required TResult Function(PostsLoadedState value) postsLoadedState,
+    required TResult Function(StoriesLoadedState value) storiesLoadedState,
   }) {
     return commentsLoadedState(this);
   }
@@ -1004,6 +1084,8 @@ class _$CommentsLoadedStateImpl implements CommentsLoadedState {
     TResult? Function(HomeErrorInitState value)? homeErrorState,
     TResult? Function(PeopleListLoadedState value)? peopleListLoadedState,
     TResult? Function(CommentsLoadedState value)? commentsLoadedState,
+    TResult? Function(PostsLoadedState value)? postsLoadedState,
+    TResult? Function(StoriesLoadedState value)? storiesLoadedState,
   }) {
     return commentsLoadedState?.call(this);
   }
@@ -1017,6 +1099,8 @@ class _$CommentsLoadedStateImpl implements CommentsLoadedState {
     TResult Function(HomeErrorInitState value)? homeErrorState,
     TResult Function(PeopleListLoadedState value)? peopleListLoadedState,
     TResult Function(CommentsLoadedState value)? commentsLoadedState,
+    TResult Function(PostsLoadedState value)? postsLoadedState,
+    TResult Function(StoriesLoadedState value)? storiesLoadedState,
     required TResult orElse(),
   }) {
     if (commentsLoadedState != null) {
@@ -1033,5 +1117,366 @@ abstract class CommentsLoadedState implements HomeState {
   List<CommentsEntity> get comments;
   @JsonKey(ignore: true)
   _$$CommentsLoadedStateImplCopyWith<_$CommentsLoadedStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$PostsLoadedStateImplCopyWith<$Res> {
+  factory _$$PostsLoadedStateImplCopyWith(_$PostsLoadedStateImpl value,
+          $Res Function(_$PostsLoadedStateImpl) then) =
+      __$$PostsLoadedStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<PostEntity> posts});
+}
+
+/// @nodoc
+class __$$PostsLoadedStateImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$PostsLoadedStateImpl>
+    implements _$$PostsLoadedStateImplCopyWith<$Res> {
+  __$$PostsLoadedStateImplCopyWithImpl(_$PostsLoadedStateImpl _value,
+      $Res Function(_$PostsLoadedStateImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? posts = null,
+  }) {
+    return _then(_$PostsLoadedStateImpl(
+      null == posts
+          ? _value._posts
+          : posts // ignore: cast_nullable_to_non_nullable
+              as List<PostEntity>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$PostsLoadedStateImpl implements PostsLoadedState {
+  const _$PostsLoadedStateImpl(final List<PostEntity> posts) : _posts = posts;
+
+  final List<PostEntity> _posts;
+  @override
+  List<PostEntity> get posts {
+    if (_posts is EqualUnmodifiableListView) return _posts;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_posts);
+  }
+
+  @override
+  String toString() {
+    return 'HomeState.postsLoadedState(posts: $posts)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$PostsLoadedStateImpl &&
+            const DeepCollectionEquality().equals(other._posts, _posts));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_posts));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$PostsLoadedStateImplCopyWith<_$PostsLoadedStateImpl> get copyWith =>
+      __$$PostsLoadedStateImplCopyWithImpl<_$PostsLoadedStateImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() homeInitState,
+    required TResult Function() homeLoadingState,
+    required TResult Function(EmptyResponse emptyResponse) homeLoadedState,
+    required TResult Function(AppErrors error, VoidCallback callback)
+        homeErrorState,
+    required TResult Function(PeopleDataEntity data) peopleListLoadedState,
+    required TResult Function(List<CommentsEntity> comments)
+        commentsLoadedState,
+    required TResult Function(List<PostEntity> posts) postsLoadedState,
+    required TResult Function(List<StoryEntity> stories) storiesLoadedState,
+  }) {
+    return postsLoadedState(posts);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? homeInitState,
+    TResult? Function()? homeLoadingState,
+    TResult? Function(EmptyResponse emptyResponse)? homeLoadedState,
+    TResult? Function(AppErrors error, VoidCallback callback)? homeErrorState,
+    TResult? Function(PeopleDataEntity data)? peopleListLoadedState,
+    TResult? Function(List<CommentsEntity> comments)? commentsLoadedState,
+    TResult? Function(List<PostEntity> posts)? postsLoadedState,
+    TResult? Function(List<StoryEntity> stories)? storiesLoadedState,
+  }) {
+    return postsLoadedState?.call(posts);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? homeInitState,
+    TResult Function()? homeLoadingState,
+    TResult Function(EmptyResponse emptyResponse)? homeLoadedState,
+    TResult Function(AppErrors error, VoidCallback callback)? homeErrorState,
+    TResult Function(PeopleDataEntity data)? peopleListLoadedState,
+    TResult Function(List<CommentsEntity> comments)? commentsLoadedState,
+    TResult Function(List<PostEntity> posts)? postsLoadedState,
+    TResult Function(List<StoryEntity> stories)? storiesLoadedState,
+    required TResult orElse(),
+  }) {
+    if (postsLoadedState != null) {
+      return postsLoadedState(posts);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(HomeInitState value) homeInitState,
+    required TResult Function(HomeLoadingState value) homeLoadingState,
+    required TResult Function(HomeLoadedState value) homeLoadedState,
+    required TResult Function(HomeErrorInitState value) homeErrorState,
+    required TResult Function(PeopleListLoadedState value)
+        peopleListLoadedState,
+    required TResult Function(CommentsLoadedState value) commentsLoadedState,
+    required TResult Function(PostsLoadedState value) postsLoadedState,
+    required TResult Function(StoriesLoadedState value) storiesLoadedState,
+  }) {
+    return postsLoadedState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(HomeInitState value)? homeInitState,
+    TResult? Function(HomeLoadingState value)? homeLoadingState,
+    TResult? Function(HomeLoadedState value)? homeLoadedState,
+    TResult? Function(HomeErrorInitState value)? homeErrorState,
+    TResult? Function(PeopleListLoadedState value)? peopleListLoadedState,
+    TResult? Function(CommentsLoadedState value)? commentsLoadedState,
+    TResult? Function(PostsLoadedState value)? postsLoadedState,
+    TResult? Function(StoriesLoadedState value)? storiesLoadedState,
+  }) {
+    return postsLoadedState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(HomeInitState value)? homeInitState,
+    TResult Function(HomeLoadingState value)? homeLoadingState,
+    TResult Function(HomeLoadedState value)? homeLoadedState,
+    TResult Function(HomeErrorInitState value)? homeErrorState,
+    TResult Function(PeopleListLoadedState value)? peopleListLoadedState,
+    TResult Function(CommentsLoadedState value)? commentsLoadedState,
+    TResult Function(PostsLoadedState value)? postsLoadedState,
+    TResult Function(StoriesLoadedState value)? storiesLoadedState,
+    required TResult orElse(),
+  }) {
+    if (postsLoadedState != null) {
+      return postsLoadedState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class PostsLoadedState implements HomeState {
+  const factory PostsLoadedState(final List<PostEntity> posts) =
+      _$PostsLoadedStateImpl;
+
+  List<PostEntity> get posts;
+  @JsonKey(ignore: true)
+  _$$PostsLoadedStateImplCopyWith<_$PostsLoadedStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$StoriesLoadedStateImplCopyWith<$Res> {
+  factory _$$StoriesLoadedStateImplCopyWith(_$StoriesLoadedStateImpl value,
+          $Res Function(_$StoriesLoadedStateImpl) then) =
+      __$$StoriesLoadedStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<StoryEntity> stories});
+}
+
+/// @nodoc
+class __$$StoriesLoadedStateImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$StoriesLoadedStateImpl>
+    implements _$$StoriesLoadedStateImplCopyWith<$Res> {
+  __$$StoriesLoadedStateImplCopyWithImpl(_$StoriesLoadedStateImpl _value,
+      $Res Function(_$StoriesLoadedStateImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? stories = null,
+  }) {
+    return _then(_$StoriesLoadedStateImpl(
+      null == stories
+          ? _value._stories
+          : stories // ignore: cast_nullable_to_non_nullable
+              as List<StoryEntity>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$StoriesLoadedStateImpl implements StoriesLoadedState {
+  const _$StoriesLoadedStateImpl(final List<StoryEntity> stories)
+      : _stories = stories;
+
+  final List<StoryEntity> _stories;
+  @override
+  List<StoryEntity> get stories {
+    if (_stories is EqualUnmodifiableListView) return _stories;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_stories);
+  }
+
+  @override
+  String toString() {
+    return 'HomeState.storiesLoadedState(stories: $stories)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$StoriesLoadedStateImpl &&
+            const DeepCollectionEquality().equals(other._stories, _stories));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_stories));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$StoriesLoadedStateImplCopyWith<_$StoriesLoadedStateImpl> get copyWith =>
+      __$$StoriesLoadedStateImplCopyWithImpl<_$StoriesLoadedStateImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() homeInitState,
+    required TResult Function() homeLoadingState,
+    required TResult Function(EmptyResponse emptyResponse) homeLoadedState,
+    required TResult Function(AppErrors error, VoidCallback callback)
+        homeErrorState,
+    required TResult Function(PeopleDataEntity data) peopleListLoadedState,
+    required TResult Function(List<CommentsEntity> comments)
+        commentsLoadedState,
+    required TResult Function(List<PostEntity> posts) postsLoadedState,
+    required TResult Function(List<StoryEntity> stories) storiesLoadedState,
+  }) {
+    return storiesLoadedState(stories);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? homeInitState,
+    TResult? Function()? homeLoadingState,
+    TResult? Function(EmptyResponse emptyResponse)? homeLoadedState,
+    TResult? Function(AppErrors error, VoidCallback callback)? homeErrorState,
+    TResult? Function(PeopleDataEntity data)? peopleListLoadedState,
+    TResult? Function(List<CommentsEntity> comments)? commentsLoadedState,
+    TResult? Function(List<PostEntity> posts)? postsLoadedState,
+    TResult? Function(List<StoryEntity> stories)? storiesLoadedState,
+  }) {
+    return storiesLoadedState?.call(stories);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? homeInitState,
+    TResult Function()? homeLoadingState,
+    TResult Function(EmptyResponse emptyResponse)? homeLoadedState,
+    TResult Function(AppErrors error, VoidCallback callback)? homeErrorState,
+    TResult Function(PeopleDataEntity data)? peopleListLoadedState,
+    TResult Function(List<CommentsEntity> comments)? commentsLoadedState,
+    TResult Function(List<PostEntity> posts)? postsLoadedState,
+    TResult Function(List<StoryEntity> stories)? storiesLoadedState,
+    required TResult orElse(),
+  }) {
+    if (storiesLoadedState != null) {
+      return storiesLoadedState(stories);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(HomeInitState value) homeInitState,
+    required TResult Function(HomeLoadingState value) homeLoadingState,
+    required TResult Function(HomeLoadedState value) homeLoadedState,
+    required TResult Function(HomeErrorInitState value) homeErrorState,
+    required TResult Function(PeopleListLoadedState value)
+        peopleListLoadedState,
+    required TResult Function(CommentsLoadedState value) commentsLoadedState,
+    required TResult Function(PostsLoadedState value) postsLoadedState,
+    required TResult Function(StoriesLoadedState value) storiesLoadedState,
+  }) {
+    return storiesLoadedState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(HomeInitState value)? homeInitState,
+    TResult? Function(HomeLoadingState value)? homeLoadingState,
+    TResult? Function(HomeLoadedState value)? homeLoadedState,
+    TResult? Function(HomeErrorInitState value)? homeErrorState,
+    TResult? Function(PeopleListLoadedState value)? peopleListLoadedState,
+    TResult? Function(CommentsLoadedState value)? commentsLoadedState,
+    TResult? Function(PostsLoadedState value)? postsLoadedState,
+    TResult? Function(StoriesLoadedState value)? storiesLoadedState,
+  }) {
+    return storiesLoadedState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(HomeInitState value)? homeInitState,
+    TResult Function(HomeLoadingState value)? homeLoadingState,
+    TResult Function(HomeLoadedState value)? homeLoadedState,
+    TResult Function(HomeErrorInitState value)? homeErrorState,
+    TResult Function(PeopleListLoadedState value)? peopleListLoadedState,
+    TResult Function(CommentsLoadedState value)? commentsLoadedState,
+    TResult Function(PostsLoadedState value)? postsLoadedState,
+    TResult Function(StoriesLoadedState value)? storiesLoadedState,
+    required TResult orElse(),
+  }) {
+    if (storiesLoadedState != null) {
+      return storiesLoadedState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class StoriesLoadedState implements HomeState {
+  const factory StoriesLoadedState(final List<StoryEntity> stories) =
+      _$StoriesLoadedStateImpl;
+
+  List<StoryEntity> get stories;
+  @JsonKey(ignore: true)
+  _$$StoriesLoadedStateImplCopyWith<_$StoriesLoadedStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
