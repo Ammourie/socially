@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 import '../../domain/entity/story_entity.dart';
 
@@ -80,10 +81,9 @@ class StoriesListWidget extends StatelessWidget {
         decoration: BoxDecoration(
           border: Border.all(color: Colors.white, width: 2),
           shape: BoxShape.circle,
-          image: DecorationImage(
-            image: NetworkImage(story.userImage),
-            fit: BoxFit.cover,
-          ),
+        ),
+        child: CircleAvatar(
+          backgroundImage: CachedNetworkImageProvider(story.userImage),
         ),
       ),
     );

@@ -1,9 +1,14 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:socially/core/common/app_config.dart';
 import 'package:socially/core/constants/enums/media_type.dart';
-import 'package:video_player/video_player.dart';
+import 'package:socially/core/ui/show_toast.dart';
+import 'package:cached_video_player_plus/cached_video_player_plus.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import '../../../features/home/domain/entity/story_entity.dart';
 
 Future<void> showStoryDialog({
@@ -46,14 +51,19 @@ class StoryDialog extends StatefulWidget {
 class _StoryDialogState extends State<StoryDialog>
     with TickerProviderStateMixin {
   int currentMediaIndex = 0;
-  VideoPlayerController? _videoPlayerController;
-  bool _isPlaying = false;
+  CachedVideoPlayerPlusController? _videoPlayerController;
   late AnimationController _progressController;
+  bool _isLoading = true;
+  File? _imageFile;
 
   @override
   void initState() {
     super.initState();
-
+    _progressController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 5),
+      value: 0.0,
+    );
     _loadMedia();
   }
 
@@ -67,12 +77,31 @@ class _StoryDialogState extends State<StoryDialog>
   }
 
   void _loadMedia() {
+    setState(() {
+      _isLoading = true;
+    });
+
     final currentMedia = widget.story.media[currentMediaIndex];
 
     if (currentMedia.type == MediaType.image) {
-      _startImageTimer();
+      _downloadAndShowImage(currentMedia.url);
     } else {
       _initializeVideo(currentMedia.url);
+    }
+  }
+
+  Future<void> _downloadAndShowImage(String url) async {
+    try {
+      _imageFile = await DefaultCacheManager().getSingleFile(url);
+      setState(() {
+        _isLoading = false;
+      });
+      _startImageTimer();
+    } catch (e) {
+      showToast('Error downloading image');
+      setState(() {
+        _isLoading = false;
+      });
     }
   }
 
@@ -87,17 +116,21 @@ class _StoryDialogState extends State<StoryDialog>
   }
 
   Future<void> _initializeVideo(String url) async {
-    _videoPlayerController = VideoPlayerController.networkUrl(Uri.parse(url));
+    _videoPlayerController =
+        CachedVideoPlayerPlusController.networkUrl(Uri.parse(url));
     await _videoPlayerController?.initialize();
     await _videoPlayerController?.setLooping(false);
     _videoPlayerController?.addListener(_onVideoFinished);
 
-    _progressController.reset();
-    _progressController.duration = _videoPlayerController?.value.duration;
+    _progressController = AnimationController(
+      vsync: this,
+      duration:
+          _videoPlayerController?.value.duration ?? const Duration(seconds: 5),
+    );
     _progressController.forward();
 
     setState(() {
-      _isPlaying = true;
+      _isLoading = false;
     });
     _videoPlayerController?.play();
   }
@@ -116,6 +149,7 @@ class _StoryDialogState extends State<StoryDialog>
         _videoPlayerController?.dispose();
       }
       setState(() {
+        _imageFile = null;
         currentMediaIndex--;
         _loadMedia();
       });
@@ -129,6 +163,7 @@ class _StoryDialogState extends State<StoryDialog>
         _videoPlayerController?.dispose();
       }
       setState(() {
+        _imageFile = null;
         currentMediaIndex++;
         _loadMedia();
       });
@@ -177,22 +212,47 @@ class _StoryDialogState extends State<StoryDialog>
   }
 
   Widget _buildCurrentMedia() {
+    if (_isLoading) {
+      return const Center(
+        child: CircularProgressIndicator(
+          color: Colors.white,
+        ),
+      );
+    }
+
     final currentMedia = widget.story.media[currentMediaIndex];
 
     if (currentMedia.type == MediaType.image) {
-      return Image.network(
-        currentMedia.url,
-        fit: BoxFit.cover,
-        width: double.infinity,
-        height: double.infinity,
+      return Container(
+        width: 1.sw,
+        height: 1.sh,
+        color: Theme.of(context).primaryColor,
+        child: _imageFile != null
+            ? Image.file(
+                _imageFile!,
+                fit: BoxFit.contain,
+              )
+            : CachedNetworkImage(
+                imageUrl: currentMedia.url,
+                fit: BoxFit.contain,
+              ),
       );
     } else {
-      return (_videoPlayerController?.value.isInitialized ?? false)
-          ? AspectRatio(
-              aspectRatio: _videoPlayerController!.value.aspectRatio,
-              child: VideoPlayer(_videoPlayerController!),
-            )
-          : const Center(child: CircularProgressIndicator());
+      return Container(
+        color: Theme.of(context).primaryColor,
+        width: 1.sw,
+        height: 1.sh,
+        child: (_videoPlayerController?.value.isInitialized ?? false)
+            ? Center(
+                child: AspectRatio(
+                  aspectRatio: _videoPlayerController!.value.aspectRatio,
+                  child: CachedVideoPlayerPlus(
+                    _videoPlayerController!,
+                  ),
+                ),
+              )
+            : const SizedBox.shrink(),
+      );
     }
   }
 
@@ -238,7 +298,7 @@ class _StoryDialogState extends State<StoryDialog>
       child: Row(
         children: [
           CircleAvatar(
-            backgroundImage: NetworkImage(widget.story.userImage),
+            backgroundImage: CachedNetworkImageProvider(widget.story.userImage),
             radius: 20,
           ),
           const SizedBox(width: 10),

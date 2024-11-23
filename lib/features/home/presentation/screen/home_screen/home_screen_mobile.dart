@@ -46,11 +46,18 @@ class _HomeScreenMobileState extends State<HomeScreenMobile> {
       StoryEntity(
         id: 1,
         media: [
-          MediaEntity(url: 'https://picsum.photos/200', type: MediaType.image),
-          // MediaEntity(
-          //     url:
-          //         'https://videos.pexels.com/video-files/5512609/5512609-hd_1080_1920_25fps.mp4',
-          //     type: MediaType.video),
+          MediaEntity(
+              url:
+                  'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&q=85&w=2000&h=1200',
+              type: MediaType.image),
+          MediaEntity(
+              url:
+                  'https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+              type: MediaType.image),
+          MediaEntity(
+              url:
+                  "https://videos.pexels.com/video-files/1409899/1409899-uhd_2560_1440_25fps.mp4",
+              type: MediaType.video),
         ],
         title: 'My Story',
         subtitle: 'Just now',
@@ -61,7 +68,14 @@ class _HomeScreenMobileState extends State<HomeScreenMobile> {
       StoryEntity(
         id: 2,
         media: [
-          MediaEntity(url: 'https://picsum.photos/201', type: MediaType.image),
+          MediaEntity(
+              url:
+                  'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&q=85&w=2000&h=1200',
+              type: MediaType.image),
+          MediaEntity(
+              url:
+                  'https://images.unsplash.com/photo-1495954484750-af469f2f9be5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+              type: MediaType.image),
           MediaEntity(
               url:
                   'https://videos.pexels.com/video-files/5512609/5512609-hd_1080_1920_25fps.mp4',
@@ -76,10 +90,17 @@ class _HomeScreenMobileState extends State<HomeScreenMobile> {
       StoryEntity(
         id: 3,
         media: [
-          MediaEntity(url: 'https://picsum.photos/202', type: MediaType.image),
           MediaEntity(
               url:
-                  'https://videos.pexels.com/video-files/5512609/5512609-hd_1080_1920_25fps.mp4',
+                  'https://images.unsplash.com/photo-1497935586351-b67a49e012bf?ixlib=rb-4.0.3&q=85&w=2000&h=1200',
+              type: MediaType.image),
+          MediaEntity(
+              url:
+                  'https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=775&q=80',
+              type: MediaType.image),
+          MediaEntity(
+              url:
+                  "https://videos.pexels.com/video-files/1409899/1409899-uhd_2560_1440_25fps.mp4",
               type: MediaType.video),
         ],
         title: 'Coffee Time',
@@ -91,7 +112,14 @@ class _HomeScreenMobileState extends State<HomeScreenMobile> {
       StoryEntity(
         id: 4,
         media: [
-          MediaEntity(url: 'https://picsum.photos/200', type: MediaType.image),
+          MediaEntity(
+              url:
+                  'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&q=85&w=2000&h=1200',
+              type: MediaType.image),
+          MediaEntity(
+              url:
+                  'https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+              type: MediaType.image),
           MediaEntity(
               url:
                   'https://videos.pexels.com/video-files/5512609/5512609-hd_1080_1920_25fps.mp4',
@@ -106,7 +134,14 @@ class _HomeScreenMobileState extends State<HomeScreenMobile> {
       StoryEntity(
         id: 5,
         media: [
-          MediaEntity(url: 'https://picsum.photos/201', type: MediaType.image),
+          MediaEntity(
+              url:
+                  'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&q=85&w=2000&h=1200',
+              type: MediaType.image),
+          MediaEntity(
+              url:
+                  'https://images.unsplash.com/photo-1431794062232-2a99a5431c6c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+              type: MediaType.image),
           MediaEntity(
               url:
                   'https://videos.pexels.com/video-files/5512609/5512609-hd_1080_1920_25fps.mp4',
@@ -121,7 +156,14 @@ class _HomeScreenMobileState extends State<HomeScreenMobile> {
       StoryEntity(
         id: 6,
         media: [
-          MediaEntity(url: 'https://picsum.photos/202', type: MediaType.image),
+          MediaEntity(
+              url:
+                  'https://images.unsplash.com/photo-1426604966848-d7adac402bff?ixlib=rb-4.0.3&q=85&w=2000&h=1200',
+              type: MediaType.image),
+          MediaEntity(
+              url:
+                  'https://images.unsplash.com/photo-1470770903676-69b98201ea1c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
+              type: MediaType.image),
           MediaEntity(
               url:
                   'https://videos.pexels.com/video-files/5512609/5512609-hd_1080_1920_25fps.mp4',
@@ -136,7 +178,14 @@ class _HomeScreenMobileState extends State<HomeScreenMobile> {
       StoryEntity(
         id: 7,
         media: [
-          MediaEntity(url: 'https://picsum.photos/200', type: MediaType.image),
+          MediaEntity(
+              url:
+                  'https://images.unsplash.com/photo-1472214103451-9374bd1c798e?ixlib=rb-4.0.3&q=85&w=2000&h=1200',
+              type: MediaType.image),
+          MediaEntity(
+              url:
+                  'https://images.unsplash.com/photo-1470770903676-69b98201ea1c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
+              type: MediaType.image),
           MediaEntity(
               url:
                   'https://videos.pexels.com/video-files/5512609/5512609-hd_1080_1920_25fps.mp4',
@@ -151,7 +200,14 @@ class _HomeScreenMobileState extends State<HomeScreenMobile> {
       StoryEntity(
         id: 8,
         media: [
-          MediaEntity(url: 'https://picsum.photos/201', type: MediaType.image),
+          MediaEntity(
+              url:
+                  'https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&q=85&w=2000&h=1200',
+              type: MediaType.image),
+          MediaEntity(
+              url:
+                  'https://images.unsplash.com/photo-1470770903676-69b98201ea1c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
+              type: MediaType.image),
           MediaEntity(
               url:
                   'https://videos.pexels.com/video-files/5512609/5512609-hd_1080_1920_25fps.mp4',
@@ -166,7 +222,14 @@ class _HomeScreenMobileState extends State<HomeScreenMobile> {
       StoryEntity(
         id: 9,
         media: [
-          MediaEntity(url: 'https://picsum.photos/202', type: MediaType.image),
+          MediaEntity(
+              url:
+                  'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?ixlib=rb-4.0.3&q=85&w=2000&h=1200',
+              type: MediaType.image),
+          MediaEntity(
+              url:
+                  'https://images.unsplash.com/photo-1470770903676-69b98201ea1c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
+              type: MediaType.image),
           MediaEntity(
               url:
                   'https://videos.pexels.com/video-files/5512609/5512609-hd_1080_1920_25fps.mp4',
