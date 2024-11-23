@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:photo_view/photo_view.dart';
@@ -11,7 +13,10 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cached_video_player_plus/cached_video_player_plus.dart';
 
 import '../../../../core/common/app_colors.dart';
+import '../../../../core/constants/app/app_constants.dart';
 import '../../../../core/constants/enums/media_type.dart';
+import '../../../../core/ui/widgets/custom_carousel.dart';
+import '../../../../core/ui/widgets/custom_image.dart';
 import '../../domain/entity/story_entity.dart';
 
 class PostWidget extends StatefulWidget {
@@ -31,7 +36,7 @@ class _PostWidgetState extends State<PostWidget> {
   @override
   void initState() {
     super.initState();
-    mediaToShow = widget.post.mediaList.take(3).toList();
+    mediaToShow = widget.post.mediaList;
   }
 
   @override
@@ -100,7 +105,28 @@ class _PostWidgetState extends State<PostWidget> {
   Widget _buildMediaGrid() {
     if (!widget.post.mediaList.isNotEmpty) return const SizedBox.shrink();
 
-    // Take only first 3 media items
+    if (mediaToShow.length > 3) {
+      return Column(
+        children: [
+          12.verticalSpace,
+          CustomCarousel(
+            aspectRatio: 1.2,
+            padEnds: true,
+            viewportFraction: 1,
+            enlargeCenterPage: true,
+            enableInfiniteScroll: false,
+            autoPlay: false,
+            items: List.generate(
+              mediaToShow.length,
+              (index) => _buildMediaTileContent(
+                mediaToShow[index],
+                index,
+              ),
+            ),
+          ),
+        ],
+      );
+    }
 
     return Column(
       children: [
@@ -118,15 +144,16 @@ class _PostWidgetState extends State<PostWidget> {
           SizedBox(
             height: 200.sp,
             child: GridView.custom(
+              physics: const NeverScrollableScrollPhysics(),
               gridDelegate: SliverQuiltedGridDelegate(
                 crossAxisCount: 3,
                 mainAxisSpacing: 4,
                 crossAxisSpacing: 4,
                 repeatPattern: QuiltedGridRepeatPattern.inverted,
                 pattern: [
-                  QuiltedGridTile(2, 2),
-                  QuiltedGridTile(1, 1),
-                  QuiltedGridTile(1, 1),
+                  const QuiltedGridTile(2, 2),
+                  const QuiltedGridTile(1, 1),
+                  const QuiltedGridTile(1, 1),
                 ],
               ),
               childrenDelegate: SliverChildBuilderDelegate(
@@ -148,10 +175,7 @@ class _PostWidgetState extends State<PostWidget> {
   ) {
     final borderRadius = BorderRadius.circular(20.r);
     if (media.type == MediaType.video) {
-      return ClipRRect(
-        borderRadius: borderRadius,
-        child: _buildMediaWidget(media),
-      );
+      return _buildMediaWidget(media);
     }
     return GestureDetector(
       onTap: () => _showImageViewer(mediaToShow, index),
@@ -165,30 +189,39 @@ class _PostWidgetState extends State<PostWidget> {
   Widget _buildFooter() {
     return Row(
       children: [
-        _buildStat(Icons.favorite_border, widget.post.likes.toString()),
+        _buildStat(AppConstants.SVG_FAVOURITE,
+            text: widget.post.likes.toString()),
         16.horizontalSpace,
         _buildStat(
-          Icons.chat_bubble_outline,
-          widget.post.comments.length.toString(),
+          AppConstants.SVG_COMMENTS,
+          text: widget.post.comments.length.toString(),
         ),
-        Spacer(),
-        _buildStat(Icons.bookmark_border, "Save"),
+        const Spacer(),
+        _buildStat(AppConstants.SVG_BOOKMARK),
       ],
     );
   }
 
-  Widget _buildStat(IconData icon, String count) {
+  Widget _buildStat(String svgPath, {String? text}) {
     return Row(
+      mainAxisSize: MainAxisSize.min,
       children: [
-        Icon(icon, size: 20.sp, color: Colors.grey),
-        4.horizontalSpace,
-        Text(
-          count,
-          style: TextThemeStyles.gloryRegular.copyWith(
-            fontSize: 14.sp,
-            color: Colors.grey,
-          ),
+        CustomImage.asset(
+          svgPath,
+          width: 20.sp,
+          height: 20.sp,
+          color: Colors.grey,
         ),
+        if (text != null) ...[
+          4.horizontalSpace,
+          Text(
+            text,
+            style: TextThemeStyles.gloryRegular.copyWith(
+              fontSize: 14.sp,
+              color: Colors.grey,
+            ),
+          )
+        ],
       ],
     );
   }
@@ -291,11 +324,13 @@ class _PostWidgetState extends State<PostWidget> {
 class VideoPlayerWidget extends StatefulWidget {
   final String videoUrl;
   final BoxFit fit;
+  final double? borderRadius;
 
   const VideoPlayerWidget({
     super.key,
     required this.videoUrl,
     this.fit = BoxFit.contain,
+    this.borderRadius,
   });
 
   @override
@@ -305,6 +340,8 @@ class VideoPlayerWidget extends StatefulWidget {
 class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
   late CachedVideoPlayerPlusController _controller;
   bool _isInitialized = false;
+  bool _isPlaying = false;
+  bool _isFinished = false;
 
   @override
   void initState() {
@@ -316,6 +353,7 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
     _controller =
         CachedVideoPlayerPlusController.networkUrl(Uri.parse(widget.videoUrl));
     await _controller.initialize();
+    _controller.addListener(_videoListener);
     if (mounted) {
       setState(() {
         _isInitialized = true;
@@ -323,8 +361,42 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
     }
   }
 
+  void _videoListener() {
+    log((_controller.value.position >= _controller.value.duration).toString());
+    if (_controller.value.position >= _controller.value.duration) {
+      setState(() {
+        _isPlaying = false;
+        _isFinished = true;
+      });
+    }
+  }
+
+  void _togglePlay() {
+    setState(() {
+      _isPlaying = !_isPlaying;
+      if (_isPlaying) {
+        _controller.play();
+      } else {
+        _controller.pause();
+      }
+      if (_isFinished) {
+        _isFinished = false;
+      }
+    });
+  }
+
+  void _replay() {
+    _controller.seekTo(Duration.zero);
+    _controller.play();
+    setState(() {
+      _isPlaying = true;
+      _isFinished = false;
+    });
+  }
+
   @override
   void dispose() {
+    _controller.removeListener(_videoListener);
     _controller.dispose();
     super.dispose();
   }
@@ -332,9 +404,37 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
   @override
   Widget build(BuildContext context) {
     return _isInitialized
-        ? AspectRatio(
-            aspectRatio: _controller.value.aspectRatio,
-            child: CachedVideoPlayerPlus(_controller),
+        ? Stack(
+            alignment: Alignment.center,
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(
+                  widget.borderRadius ?? 20.r,
+                ),
+                child: AspectRatio(
+                  aspectRatio: _controller.value.aspectRatio,
+                  child: CachedVideoPlayerPlus(_controller),
+                ),
+              ),
+              if (_isFinished)
+                IconButton(
+                  icon: const Icon(
+                    Icons.replay,
+                    color: Colors.white,
+                    size: 50,
+                  ),
+                  onPressed: _replay,
+                )
+              else
+                IconButton(
+                  icon: Icon(
+                    _isPlaying ? Icons.pause : Icons.play_arrow,
+                    color: Colors.white,
+                    size: 50,
+                  ),
+                  onPressed: _togglePlay,
+                ),
+            ],
           )
         : const Center(
             child: CircularProgressIndicator(),

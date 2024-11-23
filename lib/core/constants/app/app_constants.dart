@@ -110,4 +110,7 @@ class AppConstants {
   static const SVG_HOUSE_OUTLINE = 'assets/images/svg/house-outlined.svg';
   static const SVG_HOUSE_SOLID = 'assets/images/svg/house-solid.svg';
   static const SVG_BELL = 'assets/images/svg/bell.svg';
+  static const SVG_BOOKMARK = 'assets/images/svg/bookmark.svg';
+  static const SVG_COMMENTS = 'assets/images/svg/comments.svg';
+  static const SVG_FAVOURITE = 'assets/images/svg/favourite.svg';
 }

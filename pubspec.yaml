@@ -129,6 +129,11 @@ dependencies:
   visibility_detector: 0.4.0+2
   # A Flutter package for displaying images with zoom and pan capabilities.
   photo_view: 0.15.0
+  # A Flutter package for displaying a carousel of images.
+  carousel_slider: 5.0.0
+  # A Flutter package for displaying a smooth page indicator.
+  smooth_page_indicator: 1.2.0+3
+
 
   # Periodic callbacks in the background for both iOS and Android. Includes Android Headless implementation.
   background_fetch: 1.3.5
