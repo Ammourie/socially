@@ -1,5 +1,4 @@
 import 'package:animated_theme_switcher/animated_theme_switcher.dart';
-import 'package:device_preview/device_preview.dart';
 import 'package:pull_to_refresh_flutter3/pull_to_refresh_flutter3.dart';
 import 'package:starter_application/core/common/app_config.dart';
 import 'package:flutter/cupertino.dart';
@@ -135,8 +134,6 @@ class _AppState extends State<App> {
 
                           /// Init screen
                           home: SplashScreen(),
-
-                          builder: DevicePreview.appBuilder,
 
                           // builder: (context, widget) {
                           //   // return DevicePreview.appBuilder(context, widget!);

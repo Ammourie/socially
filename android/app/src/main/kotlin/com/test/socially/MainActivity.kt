@@ -1,4 +1,4 @@
-package com.osoustech.starter
+package com.test.socially
 
 import io.flutter.embedding.android.FlutterActivity
 

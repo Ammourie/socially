@@ -1,8 +1,6 @@
 import 'dart:io';
 
-import 'package:device_preview/device_preview.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -15,7 +13,6 @@ import 'core/common/local_storage.dart';
 import 'core/constants/app/app_constants.dart';
 import 'core/constants/app/app_settings.dart';
 import 'core/constants/enums/app_options_enum.dart';
-import 'core/dynamic_link/branch_io_dynamic_link.dart';
 import 'core/errors/error_global_handler/catcher_handler.dart';
 import 'core/errors/error_global_handler/email_manual_handler.dart';
 import 'core/errors/error_global_handler/report.dart';
@@ -32,10 +29,7 @@ void main() async {
   await _initAppConfigs();
 
   runApp(
-    DevicePreview(
-      enabled: !kReleaseMode,
-      builder: (context) => const App(),
-    ),
+    const App(),
   );
 
   AppConfig.clearNotificationSystemCount();
@@ -44,9 +38,6 @@ void main() async {
 Future<void> _initAppConfigs() async {
   WidgetsFlutterBinding.ensureInitialized();
   await LocalStorage.init();
-  if (AppSettings.enableBranchIO) {
-    BranchIODynamicLink.init();
-  }
 
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
 

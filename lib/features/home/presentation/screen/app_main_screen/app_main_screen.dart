@@ -4,7 +4,6 @@ import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../../core/constants/app/app_settings.dart';
-import '../../../../../core/dynamic_link/branch_io_dynamic_link.dart';
 import '../../../../../core/firebase/firebase_messaging.dart';
 import '../../../../../core/ui/error_ui/error_viewer/error_viewer.dart';
 import '../../../../../core/ui/screens/base_screen.dart';
@@ -40,11 +39,6 @@ class _AppMainScreenState extends State<AppMainScreen> {
     if (AppSettings.enableNotification &&
         FireBaseMessagingWrapper.notificationLock.isLocked)
       FireBaseMessagingWrapper.notificationLock.release();
-
-    if (AppSettings.enableBranchIO &&
-        BranchIODynamicLink.branchIOLock.isLocked) {
-      BranchIODynamicLink.branchIOLock.release();
-    }
   }
 
   @override
