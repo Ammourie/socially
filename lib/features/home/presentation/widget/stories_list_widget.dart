@@ -15,6 +15,7 @@ class StoriesListWidget extends StatelessWidget {
   final FontWeight? fontWeight;
   final List<StoryEntity> stories;
   final Color? backgroundColor;
+  final void Function(StoryEntity story)? onStoryTap;
 
   const StoriesListWidget({
     super.key,
@@ -29,6 +30,7 @@ class StoriesListWidget extends StatelessWidget {
     this.fontSize,
     this.fontWeight,
     this.backgroundColor,
+    this.onStoryTap,
   });
 
   @override
@@ -66,19 +68,22 @@ class StoriesListWidget extends StatelessWidget {
 
   Widget _buildStoryItem(BuildContext context, int index) {
     final story = stories[index];
-    return Container(
-      width: 170.sp,
-      height: 170.sp,
-      margin: EdgeInsetsDirectional.only(
-        start: index == 0 ? 20.sp : 0,
-        end: index == stories.length - 1 ? 20.sp : 0,
-      ),
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.white, width: 2),
-        shape: BoxShape.circle,
-        image: DecorationImage(
-          image: NetworkImage(story.userImage),
-          fit: BoxFit.cover,
+    return GestureDetector(
+      onTap: () => onStoryTap?.call(story),
+      child: Container(
+        width: 170.sp,
+        height: 170.sp,
+        margin: EdgeInsetsDirectional.only(
+          start: index == 0 ? 20.sp : 0,
+          end: index == stories.length - 1 ? 20.sp : 0,
+        ),
+        decoration: BoxDecoration(
+          border: Border.all(color: Colors.white, width: 2),
+          shape: BoxShape.circle,
+          image: DecorationImage(
+            image: NetworkImage(story.userImage),
+            fit: BoxFit.cover,
+          ),
         ),
       ),
     );
