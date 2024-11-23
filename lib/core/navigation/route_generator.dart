@@ -7,7 +7,6 @@ import '../../features/account/presentation/screen/login_screen.dart';
 import '../../features/account/presentation/screen/register_screen.dart';
 import '../../features/home/presentation/screen/app_main_screen/app_main_screen.dart';
 import '../../features/home/presentation/screen/home_screen/home_screen.dart';
-import '../../features/home/presentation/screen/map_screen.dart';
 import '../../features/notification/presentation/screen/notifications/notifications_screen.dart';
 import '../constants/enums/route_type.dart';
 import '../ui/screens/base_screen.dart';
@@ -46,10 +45,6 @@ class NavigationRoute {
             settings: settings,
             createScreen: (param) => HomeScreen(param: param));
 
-      case MapScreen.routeName:
-        return _getRoute<MapScreenParam>(
-            settings: settings,
-            createScreen: (param) => MapScreen(param: param));
       default:
         // If there is no such named route in the switch statement, e.g. /third
         return _errorRoute();

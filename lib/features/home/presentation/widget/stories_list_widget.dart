@@ -40,11 +40,11 @@ class StoriesListWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: width ?? 1.sw,
-      height: height ?? 220.sp,
+      height: height ?? 75.sp,
       clipBehavior: Clip.hardEdge,
       decoration: _buildDecoration(context),
       padding: padding,
-      margin: margin ?? EdgeInsets.symmetric(horizontal: 40.w),
+      margin: margin ?? EdgeInsets.symmetric(horizontal: 10.w),
       child: _buildStoriesList(),
     );
   }
@@ -65,7 +65,7 @@ class StoriesListWidget extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       itemCount: stories.length,
       itemBuilder: _buildStoryItem,
-      separatorBuilder: (context, index) => spacingWidget ?? 50.horizontalSpace,
+      separatorBuilder: (context, index) => spacingWidget ?? 12.horizontalSpace,
     );
   }
 
@@ -74,11 +74,11 @@ class StoriesListWidget extends StatelessWidget {
     return GestureDetector(
       onTap: () => onStoryTap?.call(story),
       child: Container(
-        width: 3 * (height ?? 220.sp) / 4,
-        height: 3 * (height ?? 220.sp) / 4,
+        width: 3 * (height ?? 75.sp) / 4,
+        height: 3 * (height ?? 75.sp) / 4,
         margin: EdgeInsetsDirectional.only(
-          start: index == 0 ? 20.sp : 0,
-          end: index == stories.length - 1 ? 20.sp : 0,
+          start: index == 0 ? 10.sp : 0,
+          end: index == stories.length - 1 ? 10.sp : 0,
         ),
         decoration: BoxDecoration(
           border: Border.all(color: Colors.white, width: 2),

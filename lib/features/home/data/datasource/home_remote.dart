@@ -98,7 +98,8 @@ class HomeRemoteSource extends IHomeRemoteSource {
         mediaList: [
           MediaModel(
             type: MediaType.video.value,
-            url: "https://example.com/video1.mp4",
+            url:
+                "https://videos.pexels.com/video-files/1409899/1409899-uhd_2560_1440_25fps.mp4",
           ),
         ],
       ),
@@ -125,6 +126,31 @@ class HomeRemoteSource extends IHomeRemoteSource {
           ),
         ],
       ),
+      PostModel(
+        id: 4,
+        userImage: "https://picsum.photos/204",
+        userName: "Emma Davis",
+        content: "Just a simple thought for today 💭",
+        likes: 45,
+        comments: ["So true!", "Well said", "Thanks for sharing"],
+        createdAt: DateTime.now().subtract(const Duration(hours: 8)),
+        mediaList: [],
+      ),
+      PostModel(
+        id: 5,
+        userImage: "https://picsum.photos/205",
+        userName: "Sarah Williams",
+        content: "My new painting 🎨",
+        likes: 156,
+        comments: ["Beautiful work!", "Love the colors", "You're so talented"],
+        createdAt: DateTime.now().subtract(const Duration(hours: 10)),
+        mediaList: [
+          MediaModel(
+            type: MediaType.image.value,
+            url: "https://picsum.photos/800/606",
+          ),
+        ],
+      ),
     ];
 
     return right(posts);
@@ -133,6 +159,7 @@ class HomeRemoteSource extends IHomeRemoteSource {
   @override
   Future<Either<AppErrors, List<StoryModel>>> getStories(
       NoParams params) async {
+    await Future.delayed(const Duration(seconds: 2));
     final dummyStories = [
       StoryModel(
         id: 1,
