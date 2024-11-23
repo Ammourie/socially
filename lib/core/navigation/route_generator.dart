@@ -11,7 +11,6 @@ import '../../features/home/presentation/screen/home_screen/home_screen.dart';
 import '../../features/home/presentation/screen/map_screen.dart';
 import '../../features/notification/presentation/screen/notifications/notifications_screen.dart';
 import '../../features/home/presentation/screen/people_screen.dart';
-import '../../features/pokemon/presentation/screen/pokemons_screen/pokemns_screen.dart';
 import '../constants/enums/route_type.dart';
 import '../ui/screens/base_screen.dart';
 import 'animations/animated_route.dart';
@@ -52,10 +51,7 @@ class NavigationRoute {
         return _getRoute<PeopleScreenParam>(
             settings: settings,
             createScreen: (param) => PeopleScreen(param: param));
-      case PokemonsScreen.routeName:
-        return _getRoute<PokemonsScreenParam>(
-            settings: settings,
-            createScreen: (param) => PokemonsScreen(param: param));
+
       case CommentsScreen.routeName:
         return _getRoute<CommentsScreenParam>(
             settings: settings,

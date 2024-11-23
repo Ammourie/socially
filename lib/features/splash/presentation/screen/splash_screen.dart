@@ -9,7 +9,7 @@ import '../../../../core/ui/dialogs/update_app_dialog.dart';
 import '../../../../core/ui/error_ui/error_viewer/dialog/errv_dialog_options.dart';
 import '../../../../core/ui/error_ui/error_viewer/error_viewer.dart';
 import '../../../../generated/l10n.dart';
-import '../../../account/presentation/screen/login_screen.dart';
+import '../../../home/presentation/screen/app_main_screen/app_main_screen.dart';
 import '../../../more/domain/entity/version_entity.dart';
 import '../cubit/splash_cubit.dart';
 import 'splash_screen_content.dart';
@@ -93,14 +93,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void handleNavigation() async {
-    // TODO: uncomment this when we have a login screen
-    // if (await AppConfig().hasToken)
-    //   Nav.off(AppMainScreen.routeName);
-    // else
-    Nav.off(
-      LoginScreen.routeName,
-      arguments: LoginScreenParam(),
-    );
+    Nav.off(AppMainScreen.routeName, arguments: AppMainScreenParam());
 
     // Check if there is a new version.
     if (versionInfo?.needUpdate ?? false)

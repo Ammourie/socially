@@ -9,12 +9,19 @@ class AppMainScreenNotifier extends ScreenNotifier {
   AppMainScreenNotifier(this.param);
 
   /// Fields
+  int _selectedIndex = 0;
   late BuildContext context;
   final AppMainScreenParam param;
   final logoutCubit = AccountCubit();
   bool _isLoading = false;
 
   /// Getters and Setters
+  int get selectedIndex => _selectedIndex;
+  set selectedIndex(int value) {
+    _selectedIndex = value;
+    notifyListeners();
+  }
+
   bool get isLoading => _isLoading;
   set isLoading(bool value) {
     _isLoading = value;
@@ -24,6 +31,11 @@ class AppMainScreenNotifier extends ScreenNotifier {
   /// Methods
   void logout() {
     logoutCubit.logout();
+  }
+
+  void onDestinationSelected(int index) {
+    _selectedIndex = index;
+    notifyListeners();
   }
 
   @override

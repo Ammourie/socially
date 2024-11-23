@@ -8,146 +8,131 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:get_it/get_it.dart' as _i1;
-import 'package:injectable/injectable.dart' as _i2;
-import 'package:logger/logger.dart' as _i7;
-import 'package:shared_preferences/shared_preferences.dart' as _i3;
-import 'package:socially/core/navigation/navigation_service.dart' as _i4;
-import 'package:socially/core/navigation/route_generator.dart' as _i5;
-import 'package:socially/core/net/http_client.dart' as _i6;
-import 'package:socially/di/modules/logger_module.dart' as _i37;
-import 'package:socially/di/modules/shared_preferences_module.dart' as _i36;
+import 'package:get_it/get_it.dart' as _i174;
+import 'package:injectable/injectable.dart' as _i526;
+import 'package:logger/logger.dart' as _i974;
+import 'package:shared_preferences/shared_preferences.dart' as _i460;
+import 'package:socially/core/navigation/navigation_service.dart' as _i841;
+import 'package:socially/core/navigation/route_generator.dart' as _i905;
+import 'package:socially/core/net/http_client.dart' as _i210;
+import 'package:socially/di/modules/logger_module.dart' as _i101;
+import 'package:socially/di/modules/shared_preferences_module.dart' as _i128;
 import 'package:socially/features/account/data/datasource/iaccount_remote.dart'
-    as _i11;
+    as _i981;
 import 'package:socially/features/account/domain/repository/iaccount_repository.dart'
-    as _i30;
+    as _i267;
 import 'package:socially/features/account/domain/usecase/login_usecase.dart'
-    as _i32;
+    as _i902;
 import 'package:socially/features/account/domain/usecase/register_usecase.dart'
-    as _i33;
+    as _i832;
 import 'package:socially/features/home/data/datasource/ihome_remote.dart'
-    as _i9;
+    as _i116;
 import 'package:socially/features/home/domain/repository/ihome_repository.dart'
-    as _i19;
+    as _i433;
 import 'package:socially/features/home/domain/usecase/comments_usecase.dart'
-    as _i21;
+    as _i82;
 import 'package:socially/features/home/domain/usecase/get_people_usecase.dart'
-    as _i22;
+    as _i242;
 import 'package:socially/features/home/domain/usecase/test_failure_usecase.dart'
-    as _i23;
+    as _i71;
 import 'package:socially/features/home/domain/usecase/test_success_usecase.dart'
-    as _i24;
+    as _i1068;
 import 'package:socially/features/home/domain/usecase/test_validator_usecase.dart'
-    as _i25;
+    as _i30;
 import 'package:socially/features/more/data/datasource/imore_remote.dart'
-    as _i10;
+    as _i459;
 import 'package:socially/features/more/domain/repository/imore_repository.dart'
-    as _i20;
+    as _i136;
 import 'package:socially/features/more/domain/usecase/check_update_app_usecase.dart'
-    as _i34;
+    as _i301;
 import 'package:socially/features/more/domain/usecase/report_problem_usecase.dart'
-    as _i35;
+    as _i329;
 import 'package:socially/features/notification/data/datasource/inotification_remote.dart'
-    as _i12;
+    as _i1041;
 import 'package:socially/features/notification/domain/repository/inotification_repository.dart'
-    as _i13;
+    as _i56;
 import 'package:socially/features/notification/domain/usecase/add_or_update_firebase_token_usecase.dart'
-    as _i27;
+    as _i359;
 import 'package:socially/features/notification/domain/usecase/change_notification_status_usecase.dart'
-    as _i28;
+    as _i313;
 import 'package:socially/features/notification/domain/usecase/get_notifications_usecase.dart'
-    as _i29;
-import 'package:socially/features/pokemon/data/datasource/ipokemon_remote.dart'
-    as _i14;
-import 'package:socially/features/pokemon/data/datasource/pokemon_remote.dart'
-    as _i15;
-import 'package:socially/features/pokemon/data/repository/pokemon_repository.dart'
-    as _i17;
-import 'package:socially/features/pokemon/domain/repository/irepository.dart'
-    as _i16;
-import 'package:socially/features/pokemon/domain/usecase/get_pokemons_usecase.dart'
-    as _i26;
+    as _i199;
 import 'package:socially/features/upload/data/datasource/iupload_remote.dart'
-    as _i8;
+    as _i139;
 import 'package:socially/features/upload/domain/repository/iupload_repository.dart'
-    as _i18;
+    as _i635;
 import 'package:socially/features/upload/domain/usecase/upload_file_usecase.dart'
-    as _i31;
+    as _i160;
 
-extension GetItInjectableX on _i1.GetIt {
+extension GetItInjectableX on _i174.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
-  Future<_i1.GetIt> init({
+  Future<_i174.GetIt> init({
     String? environment,
-    _i2.EnvironmentFilter? environmentFilter,
+    _i526.EnvironmentFilter? environmentFilter,
   }) async {
-    final gh = _i2.GetItHelper(
+    final gh = _i526.GetItHelper(
       this,
       environment,
       environmentFilter,
     );
     final sharedPreferencesModule = _$SharedPreferencesModule();
     final loggerModule = _$LoggerModule();
-    await gh.factoryAsync<_i3.SharedPreferences>(
+    await gh.factoryAsync<_i460.SharedPreferences>(
       () => sharedPreferencesModule.prefs,
       preResolve: true,
     );
-    gh.lazySingleton<_i4.NavigationService>(() => _i4.NavigationService());
-    gh.lazySingleton<_i5.NavigationRoute>(() => _i5.NavigationRoute());
-    gh.lazySingleton<_i6.HttpClient>(() => _i6.HttpClient());
-    gh.lazySingleton<_i7.Logger>(() => loggerModule.logger);
-    gh.singleton<_i8.IUploadRemoteSource>(() => _i8.UploadRemoteSource());
-    gh.factory<_i9.IHomeRemoteSource>(() => _i9.HomeRemoteSource());
-    gh.singleton<_i10.IMoreRemoteSource>(() => _i10.MoreRemoteSource());
-    gh.factory<_i11.IAccountRemoteSource>(() => _i11.AccountRemoteSource());
-    gh.singleton<_i12.INotificationRemoteSource>(
-        () => _i12.NotificationRemoteSource());
-    gh.singleton<_i13.INotificationRepository>(() =>
-        _i13.NotificationRepository(gh<_i12.INotificationRemoteSource>()));
-    gh.factory<_i14.IPokemonRemoteSource>(() => _i15.PokemonRemoteSource());
-    gh.factory<_i16.IPokemonRepository>(
-        () => _i17.PokemonRepository(gh<_i14.IPokemonRemoteSource>()));
-    gh.singleton<_i18.IUploadRepository>(
-        () => _i18.UploadRepository(gh<_i8.IUploadRemoteSource>()));
-    gh.factory<_i19.IHomeRepository>(
-        () => _i19.HomeRepository(gh<_i9.IHomeRemoteSource>()));
-    gh.singleton<_i20.IMoreRepository>(
-        () => _i20.MoreRepository(gh<_i10.IMoreRemoteSource>()));
-    gh.factory<_i21.CommentsUseCase>(
-        () => _i21.CommentsUseCase(gh<_i19.IHomeRepository>()));
-    gh.factory<_i22.GetPeopleUseCase>(
-        () => _i22.GetPeopleUseCase(gh<_i19.IHomeRepository>()));
-    gh.factory<_i23.TestFailureUseCase>(
-        () => _i23.TestFailureUseCase(gh<_i19.IHomeRepository>()));
-    gh.factory<_i24.TestSuccessUseCase>(
-        () => _i24.TestSuccessUseCase(gh<_i19.IHomeRepository>()));
-    gh.factory<_i25.TestValidatorUseCase>(
-        () => _i25.TestValidatorUseCase(gh<_i19.IHomeRepository>()));
-    gh.factory<_i26.GetPokemonsUseCase>(
-        () => _i26.GetPokemonsUseCase(gh<_i16.IPokemonRepository>()));
-    gh.singleton<_i27.AddOrUpdateFirebaseTokenUsecase>(() =>
-        _i27.AddOrUpdateFirebaseTokenUsecase(
-            gh<_i13.INotificationRepository>()));
-    gh.singleton<_i28.ChangeNotificationStatusUsecase>(() =>
-        _i28.ChangeNotificationStatusUsecase(
-            gh<_i13.INotificationRepository>()));
-    gh.singleton<_i29.GetNotificationsUsecase>(
-        () => _i29.GetNotificationsUsecase(gh<_i13.INotificationRepository>()));
-    gh.factory<_i30.IAccountRepository>(
-        () => _i30.AccountRepository(gh<_i11.IAccountRemoteSource>()));
-    gh.singleton<_i31.UploadFileUsecase>(
-        () => _i31.UploadFileUsecase(gh<_i18.IUploadRepository>()));
-    gh.factory<_i32.LoginUseCase>(
-        () => _i32.LoginUseCase(gh<_i30.IAccountRepository>()));
-    gh.factory<_i33.RegisterUseCase>(
-        () => _i33.RegisterUseCase(gh<_i30.IAccountRepository>()));
-    gh.singleton<_i34.CheckUpdateAppUsecase>(
-        () => _i34.CheckUpdateAppUsecase(gh<_i20.IMoreRepository>()));
-    gh.factory<_i35.ReportProblemUsecase>(
-        () => _i35.ReportProblemUsecase(gh<_i20.IMoreRepository>()));
+    gh.lazySingleton<_i841.NavigationService>(() => _i841.NavigationService());
+    gh.lazySingleton<_i905.NavigationRoute>(() => _i905.NavigationRoute());
+    gh.lazySingleton<_i210.HttpClient>(() => _i210.HttpClient());
+    gh.lazySingleton<_i974.Logger>(() => loggerModule.logger);
+    gh.singleton<_i459.IMoreRemoteSource>(() => _i459.MoreRemoteSource());
+    gh.singleton<_i139.IUploadRemoteSource>(() => _i139.UploadRemoteSource());
+    gh.singleton<_i1041.INotificationRemoteSource>(
+        () => _i1041.NotificationRemoteSource());
+    gh.factory<_i116.IHomeRemoteSource>(() => _i116.HomeRemoteSource());
+    gh.singleton<_i635.IUploadRepository>(
+        () => _i635.UploadRepository(gh<_i139.IUploadRemoteSource>()));
+    gh.factory<_i981.IAccountRemoteSource>(() => _i981.AccountRemoteSource());
+    gh.singleton<_i136.IMoreRepository>(
+        () => _i136.MoreRepository(gh<_i459.IMoreRemoteSource>()));
+    gh.factory<_i267.IAccountRepository>(
+        () => _i267.AccountRepository(gh<_i981.IAccountRemoteSource>()));
+    gh.factory<_i433.IHomeRepository>(
+        () => _i433.HomeRepository(gh<_i116.IHomeRemoteSource>()));
+    gh.factory<_i82.CommentsUseCase>(
+        () => _i82.CommentsUseCase(gh<_i433.IHomeRepository>()));
+    gh.factory<_i242.GetPeopleUseCase>(
+        () => _i242.GetPeopleUseCase(gh<_i433.IHomeRepository>()));
+    gh.factory<_i71.TestFailureUseCase>(
+        () => _i71.TestFailureUseCase(gh<_i433.IHomeRepository>()));
+    gh.factory<_i1068.TestSuccessUseCase>(
+        () => _i1068.TestSuccessUseCase(gh<_i433.IHomeRepository>()));
+    gh.factory<_i30.TestValidatorUseCase>(
+        () => _i30.TestValidatorUseCase(gh<_i433.IHomeRepository>()));
+    gh.factory<_i902.LoginUseCase>(
+        () => _i902.LoginUseCase(gh<_i267.IAccountRepository>()));
+    gh.factory<_i832.RegisterUseCase>(
+        () => _i832.RegisterUseCase(gh<_i267.IAccountRepository>()));
+    gh.singleton<_i56.INotificationRepository>(() =>
+        _i56.NotificationRepository(gh<_i1041.INotificationRemoteSource>()));
+    gh.singleton<_i160.UploadFileUsecase>(
+        () => _i160.UploadFileUsecase(gh<_i635.IUploadRepository>()));
+    gh.singleton<_i359.AddOrUpdateFirebaseTokenUsecase>(() =>
+        _i359.AddOrUpdateFirebaseTokenUsecase(
+            gh<_i56.INotificationRepository>()));
+    gh.singleton<_i313.ChangeNotificationStatusUsecase>(() =>
+        _i313.ChangeNotificationStatusUsecase(
+            gh<_i56.INotificationRepository>()));
+    gh.singleton<_i199.GetNotificationsUsecase>(() =>
+        _i199.GetNotificationsUsecase(gh<_i56.INotificationRepository>()));
+    gh.factory<_i329.ReportProblemUsecase>(
+        () => _i329.ReportProblemUsecase(gh<_i136.IMoreRepository>()));
+    gh.singleton<_i301.CheckUpdateAppUsecase>(
+        () => _i301.CheckUpdateAppUsecase(gh<_i136.IMoreRepository>()));
     return this;
   }
 }
 
-class _$SharedPreferencesModule extends _i36.SharedPreferencesModule {}
+class _$SharedPreferencesModule extends _i128.SharedPreferencesModule {}
 
-class _$LoggerModule extends _i37.LoggerModule {}
+class _$LoggerModule extends _i101.LoggerModule {}

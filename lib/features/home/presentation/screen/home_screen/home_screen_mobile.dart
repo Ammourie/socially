@@ -359,17 +359,6 @@ class _HomeScreenMobileState extends State<HomeScreenMobile> {
               const Divider(),
               ListTile(
                 title: Text(
-                  S.current.getPokemons,
-                  style: Theme.of(context).textTheme.titleLarge,
-                ),
-                onTap: () {
-                  provider(context, listen: false).onGetPokemonsTap(context);
-                },
-                trailing: const Icon(Icons.catching_pokemon),
-              ),
-              const Divider(),
-              ListTile(
-                title: Text(
                   S.current.testErrorScreen,
                   style: Theme.of(context).textTheme.titleLarge,
                 ),

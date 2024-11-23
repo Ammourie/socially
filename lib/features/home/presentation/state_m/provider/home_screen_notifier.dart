@@ -14,7 +14,6 @@ import '../../screen/comments_screen.dart';
 import '../../screen/people_screen.dart';
 import '../cubit/home_cubit.dart';
 import 'app_main_screen_notifier.dart';
-import '../../../../pokemon/presentation/screen/pokemons_screen/pokemns_screen.dart';
 import '../../../../../generated/l10n.dart';
 
 import '../../screen/map_screen.dart';
@@ -59,10 +58,6 @@ class HomeScreenNotifier extends ScreenNotifier {
 
   void onLogoutTap(BuildContext context) {
     context.read<AppMainScreenNotifier>().logout();
-  }
-
-  void onGetPokemonsTap(BuildContext context) {
-    Nav.to(PokemonsScreen.routeName, arguments: PokemonsScreenParam());
   }
 
   void onGetPeopleTap(BuildContext context) {

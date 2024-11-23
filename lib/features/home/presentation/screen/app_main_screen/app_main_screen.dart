@@ -54,6 +54,7 @@ class _AppMainScreenState extends State<AppMainScreen> {
       builder: (context, child) {
         // listen to isLoading state.
         context.select<AppMainScreenNotifier, bool>((p) => p.isLoading);
+        context.select<AppMainScreenNotifier, int>((p) => p.selectedIndex);
 
         return DoubleTapBackExitApp(
           child: ModalProgressHUD(
@@ -75,7 +76,9 @@ class _AppMainScreenState extends State<AppMainScreen> {
                   orElse: () {},
                 );
               },
-              child: const AppMainScreenContent(),
+              child: const Scaffold(
+                body: AppMainScreenContent(),
+              ),
             ),
           ),
         );
