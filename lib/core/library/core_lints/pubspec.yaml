@@ -1,0 +1,11 @@
+name: core_lints
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  analyzer: ^6.4.1
+  analyzer_plugin: ^0.11.2
+  custom_lint_builder: ^0.5.0
