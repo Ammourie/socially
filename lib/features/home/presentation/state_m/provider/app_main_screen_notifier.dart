@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:starter_application/features/account/presentation/state_m/cubit/account_cubit.dart';
+import '../../../../account/presentation/state_m/cubit/account_cubit.dart';
 
 import '../../../../../core/common/custom_modules/screen_notifier.dart';
 import '../../screen/app_main_screen/app_main_screen.dart';

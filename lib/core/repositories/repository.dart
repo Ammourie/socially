@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:starter_application/core/errors/app_errors.dart';
+import '../errors/app_errors.dart';
 import '../../core/models/base_model.dart';
 import '../entities/base_entity.dart';
 import '../results/result.dart';

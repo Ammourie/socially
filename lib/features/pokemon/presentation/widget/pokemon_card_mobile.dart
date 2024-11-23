@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:starter_application/core/common/responsive/responsive_utils.dart';
+import '../../../../core/common/responsive/responsive_utils.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:starter_application/core/ui/widgets/custom_image.dart';
+import '../../../../core/ui/widgets/custom_image.dart';
 
 class PokemonCardMobile extends StatelessWidget {
   final String name;

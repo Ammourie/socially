@@ -1,4 +1,4 @@
-import 'package:starter_application/core/params/base_params.dart';
+import 'base_params.dart';
 
 class PageParam extends BaseParams {
   final int? page;

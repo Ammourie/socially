@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:starter_application/core/models/base_model.dart';
-import 'package:starter_application/features/upload/domain/entity/url_entity.dart';
+import '../../../../../core/models/base_model.dart';
+import '../../../domain/entity/url_entity.dart';
 
 class UrlModel extends BaseModel<UrlEntity> {
   final String url;

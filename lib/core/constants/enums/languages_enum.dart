@@ -1,4 +1,4 @@
-import 'package:starter_application/core/constants/app/app_constants.dart';
+import '../app/app_constants.dart';
 
 enum LanguagesEnum { english, arabic, kurdish }
 

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-import 'package:starter_application/core/common/responsive/responsive_utils.dart';
-import 'package:starter_application/core/common/responsive/responsive_widget.dart';
-import 'package:starter_application/core/ui/show_toast.dart';
-import 'package:starter_application/features/home/domain/entity/comments_entity.dart';
-import 'package:starter_application/features/home/presentation/widget/comment_card.dart';
+import '../../../../core/common/responsive/responsive_utils.dart';
+import '../../../../core/common/responsive/responsive_widget.dart';
+import '../../../../core/ui/show_toast.dart';
+import '../../domain/entity/comments_entity.dart';
+import '../widget/comment_card.dart';
 
 class CommentsScreenContent extends StatefulWidget {
   final List<CommentsEntity> comments;

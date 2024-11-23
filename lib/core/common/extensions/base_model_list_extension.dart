@@ -1,5 +1,5 @@
-import 'package:starter_application/core/entities/base_entity.dart';
-import 'package:starter_application/core/models/base_model.dart';
+import '../../entities/base_entity.dart';
+import '../../models/base_model.dart';
 
 extension BaseModelList<K extends BaseModel> on List<K> {
   /// Convert list of model to list of entity

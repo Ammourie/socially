@@ -4,8 +4,8 @@
 
 import 'dart:convert';
 
-import 'package:starter_application/core/entities/base_entity.dart';
-import 'package:starter_application/core/models/base_model.dart';
+import 'package:socially/core/entities/base_entity.dart';
+import 'package:socially/core/models/base_model.dart';
 
 class MapDistanceModel extends BaseModel {
   MapDistanceModel({

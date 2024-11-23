@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-import 'package:starter_application/core/common/responsive/responsive_utils.dart';
-import 'package:starter_application/core/common/responsive/responsive_widget.dart';
-import 'package:starter_application/core/ui/show_toast.dart';
-import 'package:starter_application/features/home/domain/entity/people_entity.dart';
-import 'package:starter_application/features/home/presentation/widget/person_card_mobile.dart';
-import 'package:starter_application/features/home/presentation/widget/person_card_tablet.dart';
+import '../../../../core/common/responsive/responsive_utils.dart';
+import '../../../../core/common/responsive/responsive_widget.dart';
+import '../../../../core/ui/show_toast.dart';
+import '../../domain/entity/people_entity.dart';
+import '../widget/person_card_mobile.dart';
+import '../widget/person_card_tablet.dart';
 
 class PeopleScreenContent extends StatefulWidget {
   final List<PersonEntity> people;

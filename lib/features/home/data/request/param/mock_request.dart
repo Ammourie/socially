@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'dart:convert';
 
-import 'package:starter_application/core/params/base_params.dart';
+import '../../../../../core/params/base_params.dart';
 
 class MockRequest extends BaseParams {
   MockRequest({

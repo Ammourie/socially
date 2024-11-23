@@ -1,4 +1,4 @@
-import 'package:starter_application/core/entities/base_entity.dart';
+import '../../../../core/entities/base_entity.dart';
 
 class RegisterEntity extends BaseEntity {
   RegisterEntity({

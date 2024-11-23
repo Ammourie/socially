@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:starter_application/core/constants/shared_preference/shared_preference_keys.dart';
+import '../constants/shared_preference/shared_preference_keys.dart';
 
 class LocalStorage {
   static late SharedPreferences _sp;

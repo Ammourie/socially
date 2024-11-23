@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-import 'package:starter_application/core/ui/widgets/pagination_widget.dart';
-import 'package:starter_application/features/pokemon/presentation/state_m/provider/pokemons_screen_notifier.dart';
-import 'package:starter_application/features/pokemon/presentation/widget/pokemon_card_tablet.dart';
+import '../../../../../core/ui/widgets/pagination_widget.dart';
+import '../../state_m/provider/pokemons_screen_notifier.dart';
+import '../../widget/pokemon_card_tablet.dart';
 
 class PokemonsScreenContentTablet extends StatefulWidget {
   @override
-  State<PokemonsScreenContentTablet> createState() => _PokemonsScreenContentTabletState();
+  State<PokemonsScreenContentTablet> createState() =>
+      _PokemonsScreenContentTabletState();
 }
 
-class _PokemonsScreenContentTabletState extends State<PokemonsScreenContentTablet> {
+class _PokemonsScreenContentTabletState
+    extends State<PokemonsScreenContentTablet> {
   late PokemonsScreenNotifier sn;
 
   @override
@@ -18,7 +20,7 @@ class _PokemonsScreenContentTabletState extends State<PokemonsScreenContentTable
     sn = context.watch<PokemonsScreenNotifier>();
 
     return PaginationWidget(
-       refreshController: sn.refreshController,
+      refreshController: sn.refreshController,
       getItems: sn.loadPokemons,
       initialItems: sn.pokemons,
       onDataFetched: sn.onPokemonsListLoaded,

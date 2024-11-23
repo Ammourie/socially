@@ -1,9 +1,9 @@
 import 'dart:convert';
 
-import 'package:starter_application/core/common/type_validators.dart';
-import 'package:starter_application/core/models/base_model.dart';
-import 'package:starter_application/features/home/domain/entity/people_entity.dart';
-import 'package:starter_application/core/common/extensions/base_model_list_extension.dart';
+import '../../../../../core/common/type_validators.dart';
+import '../../../../../core/models/base_model.dart';
+import '../../../domain/entity/people_entity.dart';
+import '../../../../../core/common/extensions/base_model_list_extension.dart';
 
 class PeopleDataModel extends BaseModel<PeopleDataEntity> {
   PeopleDataModel({

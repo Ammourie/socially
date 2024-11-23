@@ -1,5 +1,5 @@
 import 'package:logger/logger.dart';
-import 'package:starter_application/di/service_locator.dart';
+import '../../../di/service_locator.dart';
 
 /// Extension on [String] to make printing beautiful debugging prints easier
 extension LoggerExtension on String {

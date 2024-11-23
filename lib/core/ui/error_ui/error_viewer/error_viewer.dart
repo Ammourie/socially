@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:starter_application/core/errors/app_errors.dart';
+import '../../../errors/app_errors.dart';
 import '../../../../generated/l10n.dart';
 import '../../dialogs/guest_dialog.dart';
 import 'dialog/errv_dialog_options.dart';

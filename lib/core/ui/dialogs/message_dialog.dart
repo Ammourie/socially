@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:starter_application/generated/l10n.dart';
+import '../../../generated/l10n.dart';
 
 import 'show_dialog.dart';
 import '../error_ui/errors_screens/error_widget.dart';

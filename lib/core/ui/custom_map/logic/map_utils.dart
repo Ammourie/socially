@@ -6,10 +6,10 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:starter_application/core/ui/custom_map/api/datasource/map_remote_datasource.dart';
-import 'package:starter_application/core/ui/custom_map/api/model/map_distance_model.dart';
-import 'package:starter_application/core/ui/custom_map/api/params/map_distance_params.dart';
-import 'package:starter_application/core/ui/custom_map/extension/custom_map_either_error_model_extension.dart';
+import '../api/datasource/map_remote_datasource.dart';
+import '../api/model/map_distance_model.dart';
+import '../api/params/map_distance_params.dart';
+import '../extension/custom_map_either_error_model_extension.dart';
 
 /// This file Contains methods that we may use in for the CustomMap.
 ///

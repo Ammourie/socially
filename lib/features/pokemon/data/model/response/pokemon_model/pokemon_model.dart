@@ -1,8 +1,8 @@
 import 'dart:convert';
 
-import 'package:starter_application/core/common/type_validators.dart';
-import 'package:starter_application/core/models/base_model.dart';
-import 'package:starter_application/features/pokemon/domain/entity/pokemon_entity/pokemon_entity.dart';
+import '../../../../../../core/common/type_validators.dart';
+import '../../../../../../core/models/base_model.dart';
+import '../../../../domain/entity/pokemon_entity/pokemon_entity.dart';
 
 class PokemonModel extends BaseModel<PokemonEntity> {
   PokemonModel({
@@ -33,7 +33,7 @@ class PokemonModel extends BaseModel<PokemonEntity> {
     int? id;
     if (url != null) {
       final splitted = url!.split("/");
-      id = int.tryParse(splitted[splitted.length-2]);
+      id = int.tryParse(splitted[splitted.length - 2]);
     }
     return PokemonEntity(
       name: name,

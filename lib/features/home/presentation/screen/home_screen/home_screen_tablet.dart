@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:provider/provider.dart';
-import 'package:starter_application/core/common/responsive/responsive_utils.dart';
+import '../../../../../core/common/responsive/responsive_utils.dart';
 
-import 'package:starter_application/core/ui/clippers/theme_circle_clipper.dart';
-import 'package:starter_application/features/home/presentation/state_m/provider/home_screen_notifier.dart';
-import 'package:starter_application/generated/l10n.dart';
+import '../../../../../core/ui/clippers/theme_circle_clipper.dart';
+import '../../state_m/provider/home_screen_notifier.dart';
+import '../../../../../generated/l10n.dart';
 
 class HomeScreenTablet extends StatelessWidget {
   const HomeScreenTablet({Key? key}) : super(key: key);

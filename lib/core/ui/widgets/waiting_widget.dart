@@ -2,7 +2,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shimmer/shimmer.dart';
-import 'package:starter_application/core/ui/widgets/custom_shimmer.dart';
+import 'custom_shimmer.dart';
 
 enum ProgressIndicatorOption {
   Circular,

@@ -1,15 +1,15 @@
 import 'package:dio/dio.dart';
 import 'package:pull_to_refresh_flutter3/pull_to_refresh_flutter3.dart';
-import 'package:starter_application/core/common/custom_modules/screen_notifier.dart';
-import 'package:starter_application/core/constants/app/app_constants.dart';
-import 'package:starter_application/core/errors/app_errors.dart';
-import 'package:starter_application/core/results/result.dart';
-import 'package:starter_application/core/ui/show_toast.dart';
-import 'package:starter_application/di/service_locator.dart';
-import 'package:starter_application/features/pokemon/data/model/request/get_pokemons_parameter.dart';
-import 'package:starter_application/features/pokemon/domain/entity/pokemon_entity/pokemon_entity.dart';
-import 'package:starter_application/features/pokemon/domain/usecase/get_pokemons_usecase.dart';
-import 'package:starter_application/features/pokemon/presentation/state_m/cubit/pokemon_cubit.dart';
+import '../../../../../core/common/custom_modules/screen_notifier.dart';
+import '../../../../../core/constants/app/app_constants.dart';
+import '../../../../../core/errors/app_errors.dart';
+import '../../../../../core/results/result.dart';
+import '../../../../../core/ui/show_toast.dart';
+import '../../../../../di/service_locator.dart';
+import '../../../data/model/request/get_pokemons_parameter.dart';
+import '../../../domain/entity/pokemon_entity/pokemon_entity.dart';
+import '../../../domain/usecase/get_pokemons_usecase.dart';
+import '../cubit/pokemon_cubit.dart';
 
 class PokemonsScreenNotifier extends ScreenNotifier {
   /// Fields

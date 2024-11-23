@@ -1,4 +1,4 @@
-import 'package:starter_application/core/params/base_params.dart';
+import '../../../../../core/params/base_params.dart';
 
 class GetPokemonsParameter extends BaseParams {
   /// Request Fields

@@ -1,4 +1,4 @@
-import 'package:starter_application/core/params/base_params.dart';
+import 'base_params.dart';
 
 class IdParam extends BaseParams {
   final int id;

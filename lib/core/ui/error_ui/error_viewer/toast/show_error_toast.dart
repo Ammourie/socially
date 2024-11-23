@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart' as toast;
-import 'package:starter_application/core/ui/show_toast.dart';
+import '../../../show_toast.dart';
 
 import 'errv_toast_options.dart';
 

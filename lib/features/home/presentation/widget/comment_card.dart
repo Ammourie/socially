@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:starter_application/core/common/responsive/responsive_widget.dart';
+import '../../../../core/common/responsive/responsive_widget.dart';
 
 class CommentCardMobile extends StatelessWidget {
   final String? name, body, email;

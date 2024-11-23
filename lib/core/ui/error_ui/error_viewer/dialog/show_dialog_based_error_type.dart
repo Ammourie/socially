@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:starter_application/core/errors/app_errors.dart';
-import 'package:starter_application/generated/l10n.dart';
+import '../../../../errors/app_errors.dart';
+import '../../../../../generated/l10n.dart';
 import '../error_viewer.dart';
 import 'errv_dialog_options.dart';
 

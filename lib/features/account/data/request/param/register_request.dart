@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
-import 'package:starter_application/core/params/base_params.dart';
+import '../../../../../core/params/base_params.dart';
 
 class RegisterRequest extends BaseParams {
   RegisterRequest(

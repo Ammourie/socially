@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pull_to_refresh_flutter3/pull_to_refresh_flutter3.dart';
-import 'package:starter_application/generated/l10n.dart';
+import '../../../generated/l10n.dart';
 
 class FooterWidget extends StatelessWidget {
   @override

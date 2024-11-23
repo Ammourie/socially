@@ -1,11 +1,10 @@
-
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
-import 'package:starter_application/core/constants/enums/http_method.dart';
-import 'package:starter_application/core/errors/app_errors.dart';
-import 'package:starter_application/core/net/response_validators/pokemon_response_validators.dart';
-import 'package:starter_application/features/pokemon/data/model/request/get_pokemons_parameter.dart';
-import 'package:starter_application/features/pokemon/data/model/response/pokemon_model/pokemon_list_model.dart';
+import '../../../../core/constants/enums/http_method.dart';
+import '../../../../core/errors/app_errors.dart';
+import '../../../../core/net/response_validators/pokemon_response_validators.dart';
+import '../model/request/get_pokemons_parameter.dart';
+import '../model/response/pokemon_model/pokemon_list_model.dart';
 
 import 'ipokemon_remote.dart';
 

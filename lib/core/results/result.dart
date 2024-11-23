@@ -1,4 +1,4 @@
-import 'package:starter_application/core/errors/app_errors.dart';
+import '../errors/app_errors.dart';
 
 class Result<Error extends AppErrors, Data> {
   final Data? data;

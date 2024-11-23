@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:starter_application/core/errors/app_errors.dart';
+import '../../errors/app_errors.dart';
 
 abstract class ResponseValidator {
   AppErrors? error;

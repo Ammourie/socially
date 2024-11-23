@@ -1,4 +1,4 @@
-import 'package:starter_application/core/errors/app_errors.dart';
+import '../errors/app_errors.dart';
 
 import '../params/base_params.dart';
 import '../results/result.dart';

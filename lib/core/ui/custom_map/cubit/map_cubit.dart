@@ -1,11 +1,11 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:starter_application/core/errors/app_errors.dart';
-import 'package:starter_application/core/ui/custom_map/api/datasource/map_remote_datasource.dart';
-import 'package:starter_application/core/ui/custom_map/api/model/map_distance_model.dart';
-import 'package:starter_application/core/ui/custom_map/api/params/map_distance_params.dart';
-import 'package:starter_application/generated/l10n.dart';
+import '../../../errors/app_errors.dart';
+import '../api/datasource/map_remote_datasource.dart';
+import '../api/model/map_distance_model.dart';
+import '../api/params/map_distance_params.dart';
+import '../../../../generated/l10n.dart';
 
 // import 'package:promoter/generated/l10n.dart';
 // import 'package:promoter/ui/widgets/map/custom_map/api/datasource/map_remote_datasource.dart';

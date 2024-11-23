@@ -1,6 +1,6 @@
 import 'package:geolocator/geolocator.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:starter_application/core/common/utils/permission_utils.dart';
+import '../../../common/utils/permission_utils.dart';
 
 import 'location_permissions_result.dart';
 

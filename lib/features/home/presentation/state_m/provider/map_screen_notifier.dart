@@ -3,10 +3,10 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:starter_application/core/constants/app/app_constants.dart';
-import 'package:starter_application/core/ui/custom_map/logic/custom_marker.dart';
-import 'package:starter_application/core/ui/custom_map/logic/map_utils.dart';
-import 'package:starter_application/core/ui/custom_map/widget/custom_map.dart';
+import '../../../../../core/constants/app/app_constants.dart';
+import '../../../../../core/ui/custom_map/logic/custom_marker.dart';
+import '../../../../../core/ui/custom_map/logic/map_utils.dart';
+import '../../../../../core/ui/custom_map/widget/custom_map.dart';
 
 import '../../../../../../../core/common/custom_modules/screen_notifier.dart';
 import '../../../../../core/ui/custom_map/logic/location_wrapper.dart';

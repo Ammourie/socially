@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:starter_application/core/constants/app/app_constants.dart';
+import '../../../../core/constants/app/app_constants.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PokemonCardTablet extends StatelessWidget {

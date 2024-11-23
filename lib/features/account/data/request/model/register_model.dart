@@ -1,8 +1,8 @@
 import 'dart:convert';
 
-import 'package:starter_application/core/models/base_model.dart';
-import 'package:starter_application/core/common/type_validators.dart';
-import 'package:starter_application/features/account/domain/entity/register_entity.dart';
+import '../../../../../core/models/base_model.dart';
+import '../../../../../core/common/type_validators.dart';
+import '../../../domain/entity/register_entity.dart';
 
 class RegisterModel extends BaseModel<RegisterEntity> {
   RegisterModel({

@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:intl/intl.dart';
-import 'package:starter_application/core/common/app_config.dart';
-import 'package:starter_application/core/common/local_storage.dart';
+import '../common/app_config.dart';
+import '../common/local_storage.dart';
 
 import '../constants/app/app_constants.dart';
 

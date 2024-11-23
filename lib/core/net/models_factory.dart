@@ -1,5 +1,5 @@
-import 'package:starter_application/core/models/base_model.dart';
-import 'package:starter_application/core/net/create_model_interceptor/create_model.interceptor.dart';
+import '../models/base_model.dart';
+import 'create_model_interceptor/create_model.interceptor.dart';
 
 /// This class is singleton and used to get models from json responses
 class ModelsFactory {

@@ -1,12 +1,12 @@
 import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:pull_to_refresh_flutter3/pull_to_refresh_flutter3.dart';
-import 'package:starter_application/core/common/app_config.dart';
+import 'core/common/app_config.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-import 'package:starter_application/features/splash/presentation/screen/splash_screen.dart';
+import 'features/splash/presentation/screen/splash_screen.dart';
 import 'package:statusbarz/statusbarz.dart';
 import 'core/common/provider_list.dart';
 import 'core/constants/app/app_constants.dart';

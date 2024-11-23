@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:starter_application/core/constants/app/app_constants.dart';
-import 'package:starter_application/core/ui/error_ui/errors_screens/build_error_screen.dart';
-import 'package:starter_application/generated/l10n.dart';
+import '../../constants/app/app_constants.dart';
+import '../error_ui/errors_screens/build_error_screen.dart';
+import '../../../generated/l10n.dart';
 
 class EmptyScreenWidget extends StatelessWidget {
   final String? title, buttonText;

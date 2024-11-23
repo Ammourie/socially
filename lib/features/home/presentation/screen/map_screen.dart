@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:starter_application/core/ui/screens/base_screen.dart';
+import '../../../../core/ui/screens/base_screen.dart';
 import '../../../../core/ui/custom_map/logic/custom_map_model.dart';
 import '../../../../core/ui/widgets/waiting_widget.dart';
 import '../screen/../state_m/provider/map_screen_notifier.dart';
 import 'map_screen_content.dart';
-class MapScreenParam{
 
-}
+class MapScreenParam {}
+
 class MapScreen extends BaseScreen<MapScreenParam> {
   static const String routeName = "/MapScreen";
 
-  const MapScreen({Key? key, required MapScreenParam param}) : super(key: key, param: param);
+  const MapScreen({Key? key, required MapScreenParam param})
+      : super(key: key, param: param);
 
   @override
   _MapScreenState createState() => _MapScreenState();

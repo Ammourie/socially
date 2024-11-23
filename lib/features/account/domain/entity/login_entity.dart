@@ -1,5 +1,4 @@
-
-import 'package:starter_application/core/entities/base_entity.dart';
+import '../../../../core/entities/base_entity.dart';
 
 class LoginEntity extends BaseEntity {
   final String? token;

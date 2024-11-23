@@ -1,4 +1,4 @@
-import 'package:starter_application/core/ui/snackbars/show_snackbar.dart';
+import '../../../snackbars/show_snackbar.dart';
 
 import 'errv_snack_bar_options.dart';
 

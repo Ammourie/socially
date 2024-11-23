@@ -1,8 +1,8 @@
 import 'dart:io' show Platform;
 import 'package:flutter/material.dart';
-import 'package:starter_application/core/ui/dialogs/custom_dialogs.dart';
-import 'package:starter_application/core/ui/error_ui/error_viewer/dialog/errv_dialog_options.dart';
-import 'package:starter_application/generated/l10n.dart';
+import '../../../dialogs/custom_dialogs.dart';
+import 'errv_dialog_options.dart';
+import '../../../../../generated/l10n.dart';
 
 void showCustomErrorDialog({
   required BuildContext context,

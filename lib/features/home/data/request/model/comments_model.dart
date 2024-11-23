@@ -1,5 +1,5 @@
-import 'package:starter_application/core/models/base_model.dart';
-import 'package:starter_application/features/home/domain/entity/comments_entity.dart';
+import '../../../../../core/models/base_model.dart';
+import '../../../domain/entity/comments_entity.dart';
 
 class CommentsModel extends BaseModel<CommentsEntity> {
   int? postId;

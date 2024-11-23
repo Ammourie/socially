@@ -2,10 +2,10 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:starter_application/core/errors/app_errors.dart';
-import 'package:starter_application/core/results/result.dart';
-import 'package:starter_application/core/ui/widgets/waiting_widget.dart';
-import 'package:starter_application/generated/l10n.dart';
+import '../../../errors/app_errors.dart';
+import '../../../results/result.dart';
+import '../waiting_widget.dart';
+import '../../../../generated/l10n.dart';
 
 class CustomDropdown<T> extends StatefulWidget {
   /// List of items to be shown in the dropdown without the hastle of

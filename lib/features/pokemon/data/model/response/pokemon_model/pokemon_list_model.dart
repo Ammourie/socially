@@ -4,12 +4,11 @@
 
 import 'dart:convert';
 
-import 'package:starter_application/core/common/type_validators.dart';
-import 'package:starter_application/core/models/base_model.dart';
-import 'package:starter_application/features/pokemon/data/model/response/pokemon_model/pokemon_model.dart';
-import 'package:starter_application/features/pokemon/domain/entity/pokemon_entity/pkemon_list_entity.dart';
-import 'package:starter_application/core/common/extensions/extensions.dart';
-
+import 'package:socially/core/common/type_validators.dart';
+import 'package:socially/core/models/base_model.dart';
+import 'package:socially/features/pokemon/data/model/response/pokemon_model/pokemon_model.dart';
+import 'package:socially/features/pokemon/domain/entity/pokemon_entity/pkemon_list_entity.dart';
+import 'package:socially/core/common/extensions/extensions.dart';
 
 class PokemonListModel extends BaseModel<PokemonListEntity> {
   PokemonListModel({
@@ -34,8 +33,10 @@ class PokemonListModel extends BaseModel<PokemonListEntity> {
         count: numV(json["count"]),
         next: stringV(json["next"]),
         previous: stringV(json["previous"]),
-        results: json['results'] == null ? [] : List<PokemonModel>.from(
-            json["results"].map((x) => PokemonModel.fromMap(x))),
+        results: json['results'] == null
+            ? []
+            : List<PokemonModel>.from(
+                json["results"].map((x) => PokemonModel.fromMap(x))),
       );
 
   Map<String, dynamic> toMap() => {

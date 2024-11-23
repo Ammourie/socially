@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:starter_application/generated/l10n.dart';
+import '../../../../generated/l10n.dart';
 
 import '../../show_toast.dart';
 

@@ -4,8 +4,7 @@ import 'dart:math';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:starter_application/core/constants/app/app_constants.dart';
-
+import '../../constants/app/app_constants.dart';
 
 typedef void RatingChangeCallback(double rating);
 
@@ -229,7 +228,8 @@ class _SmoothStarRatingState extends State<SmoothStarRating> {
                           localizedValue(newRating == 0 ? 1 : newRating);
                     });
                     debounceTimer?.cancel();
-                    debounceTimer = Timer(const Duration(milliseconds: 100), () {
+                    debounceTimer =
+                        Timer(const Duration(milliseconds: 100), () {
                       if (widget.onRated != null) {
                         currentRating = normalizeRating(newRating);
                         widget.onRated!(currentRating);

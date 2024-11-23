@@ -1,8 +1,8 @@
 import 'dart:convert';
 
-import 'package:starter_application/core/common/type_validators.dart';
-import 'package:starter_application/core/models/base_model.dart';
-import 'package:starter_application/features/account/domain/entity/login_entity.dart';
+import '../../../../../core/common/type_validators.dart';
+import '../../../../../core/models/base_model.dart';
+import '../../../domain/entity/login_entity.dart';
 
 class LoginModel extends BaseModel<LoginEntity> {
   final String? token;

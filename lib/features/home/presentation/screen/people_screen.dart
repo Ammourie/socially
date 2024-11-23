@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:starter_application/core/ui/error_ui/errors_screens/error_widget.dart';
-import 'package:starter_application/core/ui/screens/base_screen.dart';
-import 'package:starter_application/core/ui/widgets/waiting_widget.dart';
-import 'package:starter_application/features/home/presentation/screen/people_screen_content.dart';
-import 'package:starter_application/features/home/presentation/state_m/cubit/home_cubit.dart';
+import '../../../../core/ui/error_ui/errors_screens/error_widget.dart';
+import '../../../../core/ui/screens/base_screen.dart';
+import '../../../../core/ui/widgets/waiting_widget.dart';
+import 'people_screen_content.dart';
+import '../state_m/cubit/home_cubit.dart';
 
 class PeopleScreenParam {}
 

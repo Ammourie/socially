@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:starter_application/core/common/custom_modules/screen_notifier.dart';
-import 'package:starter_application/core/common/extensions/extensions.dart';
-import 'package:starter_application/core/common/utils/utils.dart';
-import 'package:starter_application/core/errors/app_errors.dart';
-import 'package:starter_application/core/models/empty_response.dart';
-import 'package:starter_application/core/navigation/nav.dart';
-import 'package:starter_application/core/ui/dialogs/language_dialog.dart';
-import 'package:starter_application/core/ui/error_ui/error_viewer/error_viewer.dart';
-import 'package:starter_application/core/ui/error_ui/error_viewer/snack_bar/errv_snack_bar_options.dart';
-import 'package:starter_application/core/ui/show_toast.dart';
-import 'package:starter_application/features/home/presentation/screen/comments_screen.dart';
-import 'package:starter_application/features/home/presentation/screen/people_screen.dart';
-import 'package:starter_application/features/home/presentation/state_m/cubit/home_cubit.dart';
-import 'package:starter_application/features/home/presentation/state_m/provider/app_main_screen_notifier.dart';
-import 'package:starter_application/features/pokemon/presentation/screen/pokemons_screen/pokemns_screen.dart';
-import 'package:starter_application/generated/l10n.dart';
+import '../../../../../core/common/custom_modules/screen_notifier.dart';
+import '../../../../../core/common/extensions/extensions.dart';
+import '../../../../../core/common/utils/utils.dart';
+import '../../../../../core/errors/app_errors.dart';
+import '../../../../../core/models/empty_response.dart';
+import '../../../../../core/navigation/nav.dart';
+import '../../../../../core/ui/dialogs/language_dialog.dart';
+import '../../../../../core/ui/error_ui/error_viewer/error_viewer.dart';
+import '../../../../../core/ui/error_ui/error_viewer/snack_bar/errv_snack_bar_options.dart';
+import '../../../../../core/ui/show_toast.dart';
+import '../../screen/comments_screen.dart';
+import '../../screen/people_screen.dart';
+import '../cubit/home_cubit.dart';
+import 'app_main_screen_notifier.dart';
+import '../../../../pokemon/presentation/screen/pokemons_screen/pokemns_screen.dart';
+import '../../../../../generated/l10n.dart';
 
 import '../../screen/map_screen.dart';
 

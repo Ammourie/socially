@@ -1,10 +1,10 @@
 import 'package:injectable/injectable.dart';
-import 'package:starter_application/core/errors/app_errors.dart';
-import 'package:starter_application/core/params/no_params.dart';
-import 'package:starter_application/core/results/result.dart';
-import 'package:starter_application/core/usecases/usecase.dart';
-import 'package:starter_application/features/home/domain/entity/comments_entity.dart';
-import 'package:starter_application/features/home/domain/repository/ihome_repository.dart';
+import '../../../../core/errors/app_errors.dart';
+import '../../../../core/params/no_params.dart';
+import '../../../../core/results/result.dart';
+import '../../../../core/usecases/usecase.dart';
+import '../entity/comments_entity.dart';
+import '../repository/ihome_repository.dart';
 
 @injectable
 class CommentsUseCase extends UseCase<List<CommentsEntity>, NoParams> {

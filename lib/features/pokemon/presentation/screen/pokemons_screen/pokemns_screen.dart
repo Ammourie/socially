@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
-import 'package:starter_application/core/ui/error_ui/errors_screens/error_widget.dart';
-import 'package:starter_application/core/ui/screens/base_screen.dart';
-import 'package:starter_application/core/ui/widgets/waiting_widget.dart';
-import 'package:starter_application/features/pokemon/domain/entity/pokemon_entity/pkemon_list_entity.dart';
-import 'package:starter_application/features/pokemon/presentation/screen/pokemons_screen/pokemons_screen_content.dart';
-import 'package:starter_application/features/pokemon/presentation/state_m/cubit/pokemon_cubit.dart';
-import 'package:starter_application/features/pokemon/presentation/state_m/provider/pokemons_screen_notifier.dart';
+import '../../../../../core/ui/error_ui/errors_screens/error_widget.dart';
+import '../../../../../core/ui/screens/base_screen.dart';
+import '../../../../../core/ui/widgets/waiting_widget.dart';
+import '../../../domain/entity/pokemon_entity/pkemon_list_entity.dart';
+import 'pokemons_screen_content.dart';
+import '../../state_m/cubit/pokemon_cubit.dart';
+import '../../state_m/provider/pokemons_screen_notifier.dart';
 
 class PokemonsScreenParam {}
 

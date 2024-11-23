@@ -1,4 +1,4 @@
-import 'package:starter_application/generated/l10n.dart';
+import '../../generated/l10n.dart';
 
 /// Regexes and validators that be used in text fields
 class Validators {

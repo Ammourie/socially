@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:starter_application/core/ui/widgets/restart_widget.dart';
-import 'package:starter_application/core/navigation/nav.dart';
-import 'package:starter_application/generated/l10n.dart';
+import '../widgets/restart_widget.dart';
+import '../../navigation/nav.dart';
+import '../../../generated/l10n.dart';
 
 class PermissionAlertDialog extends StatelessWidget {
   final String? permissionName;

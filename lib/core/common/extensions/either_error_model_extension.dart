@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:dartz/dartz.dart';
-import 'package:starter_application/core/entities/base_entity.dart';
+import '../../entities/base_entity.dart';
 
 import '../../errors/app_errors.dart';
 import '../../models/base_model.dart';

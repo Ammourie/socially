@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-import 'package:starter_application/core/ui/widgets/pagination_widget.dart';
-import 'package:starter_application/features/pokemon/domain/entity/pokemon_entity/pokemon_entity.dart';
-import 'package:starter_application/features/pokemon/presentation/state_m/provider/pokemons_screen_notifier.dart';
-import 'package:starter_application/features/pokemon/presentation/widget/pokemon_card_mobile.dart';
+import '../../../../../core/ui/widgets/pagination_widget.dart';
+import '../../../domain/entity/pokemon_entity/pokemon_entity.dart';
+import '../../state_m/provider/pokemons_screen_notifier.dart';
+import '../../widget/pokemon_card_mobile.dart';
 
 class PokemonsScreenContentMobile extends StatefulWidget {
   @override
-  State<PokemonsScreenContentMobile> createState() => _PokemonsScreenContentMobileState();
+  State<PokemonsScreenContentMobile> createState() =>
+      _PokemonsScreenContentMobileState();
 }
 
-class _PokemonsScreenContentMobileState extends State<PokemonsScreenContentMobile> {
+class _PokemonsScreenContentMobileState
+    extends State<PokemonsScreenContentMobile> {
   late PokemonsScreenNotifier sn;
 
   @override

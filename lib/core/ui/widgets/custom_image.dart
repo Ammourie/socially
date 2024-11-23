@@ -3,16 +3,16 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shimmer/shimmer.dart';
-import 'package:starter_application/core/common/app_config.dart';
-import 'package:starter_application/core/common/extensions/extensions.dart';
-import 'package:starter_application/core/constants/app/app_constants.dart';
-import 'package:starter_application/core/ui/error_ui/error_viewer/dialog/errv_dialog_options.dart';
-import 'package:starter_application/core/ui/error_ui/error_viewer/dialog/show_error_dialog.dart';
-import 'package:starter_application/core/ui/error_ui/error_viewer/errv_options.dart';
-import 'package:starter_application/core/ui/error_ui/error_viewer/snack_bar/errv_snack_bar_options.dart';
-import 'package:starter_application/core/ui/error_ui/error_viewer/snack_bar/show_error_snackbar.dart';
-import 'package:starter_application/core/ui/error_ui/error_viewer/toast/errv_toast_options.dart';
-import 'package:starter_application/core/ui/error_ui/error_viewer/toast/show_error_toast.dart';
+import '../../common/app_config.dart';
+import '../../common/extensions/extensions.dart';
+import '../../constants/app/app_constants.dart';
+import '../error_ui/error_viewer/dialog/errv_dialog_options.dart';
+import '../error_ui/error_viewer/dialog/show_error_dialog.dart';
+import '../error_ui/error_viewer/errv_options.dart';
+import '../error_ui/error_viewer/snack_bar/errv_snack_bar_options.dart';
+import '../error_ui/error_viewer/snack_bar/show_error_snackbar.dart';
+import '../error_ui/error_viewer/toast/errv_toast_options.dart';
+import '../error_ui/error_viewer/toast/show_error_toast.dart';
 
 class CustomImage {
   CustomImage._();

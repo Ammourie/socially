@@ -1,10 +1,10 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:starter_application/di/service_locator.dart';
-import 'package:starter_application/features/upload/data/model/request/upload_file_param.dart';
-import 'package:starter_application/features/upload/domain/entity/url_entity.dart';
-import 'package:starter_application/features/upload/domain/usecase/upload_file_usecase.dart';
+import '../../../../../di/service_locator.dart';
+import '../../../data/model/request/upload_file_param.dart';
+import '../../../domain/entity/url_entity.dart';
+import '../../../domain/usecase/upload_file_usecase.dart';
 
 import '../../../../../core/errors/app_errors.dart';
 

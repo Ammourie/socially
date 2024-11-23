@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:starter_application/core/errors/app_errors.dart';
-import 'package:starter_application/di/service_locator.dart';
-import 'package:starter_application/features/pokemon/domain/entity/pokemon_entity/pkemon_list_entity.dart';
-import 'package:starter_application/features/pokemon/domain/usecase/get_pokemons_usecase.dart';
-import 'package:starter_application/features/pokemon/data/model/request/get_pokemons_parameter.dart';
+import '../../../../../core/errors/app_errors.dart';
+import '../../../../../di/service_locator.dart';
+import '../../../domain/entity/pokemon_entity/pkemon_list_entity.dart';
+import '../../../domain/usecase/get_pokemons_usecase.dart';
+import '../../../data/model/request/get_pokemons_parameter.dart';
 
 part 'pokemon_state.dart';
 
