@@ -7,7 +7,7 @@ class AppConstants {
 
   // TODO: Add the name of the app
   static const TITLE_APP_NAME = '';
-  static final screenPadding = 20.w;
+  static final screenPadding = 16.sp;
   static final COUNTRY_CODE = "+964";
 
   /// Pagination constants
@@ -93,4 +93,21 @@ class AppConstants {
 
   // Verification Code Length.
   static const OTP_LENGTH = 6;
+
+  /// assignment constants
+  static const THRESHOLD = 720;
+
+  /// images
+  static const IMAGE_SOCIALY = "assets/images/png/socialy.png";
+
+  /// svg
+  static const SVG_CIRCLE_USER_SOLID =
+      'assets/images/svg/circle-user-solid.svg';
+  static const SVG_CIRCLE_USER_OUTLINE =
+      'assets/images/svg/circle-user-outlined.svg';
+  static const SVG_COMPASS_OUTLINE = 'assets/images/svg/compass-outlined.svg';
+  static const SVG_COMPASS_SOLID = 'assets/images/svg/compass-solid.svg';
+  static const SVG_HOUSE_OUTLINE = 'assets/images/svg/house-outlined.svg';
+  static const SVG_HOUSE_SOLID = 'assets/images/svg/house-solid.svg';
+  static const SVG_BELL = 'assets/images/svg/bell.svg';
 }

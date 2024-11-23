@@ -10,6 +10,7 @@ class AppMainScreenNotifier extends ScreenNotifier {
 
   /// Fields
   int _selectedIndex = 0;
+
   late BuildContext context;
   final AppMainScreenParam param;
   final logoutCubit = AccountCubit();

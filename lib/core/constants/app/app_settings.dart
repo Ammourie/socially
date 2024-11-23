@@ -19,7 +19,7 @@ class AppSettings {
   static const enableBranchIO = false;
 
   // App Colors
-  static const Color PRIMARY_COLOR_LIGHT = Colors.blue;
+  static const Color PRIMARY_COLOR_LIGHT = Color(0xFF1E2832);
   static const Color ACCENT_COLOR_LIGHT = Colors.black;
 
   static const Color PRIMARY_COLOR_DARK = Colors.blue;

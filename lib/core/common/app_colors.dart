@@ -13,4 +13,7 @@ class AppColors {
   // dark theme colors
   static Color primaryColorDark = AppSettings.PRIMARY_COLOR_DARK;
   static Color accentColorDark = AppSettings.ACCENT_COLOR_DARK;
+
+  // navigation bar colors
+  static const Color navBarIconColor = Color(0xFF002B5D);
 }
