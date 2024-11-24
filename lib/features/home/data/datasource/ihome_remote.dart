@@ -12,6 +12,7 @@ import '../../../../core/net/response_validators/test_response_validator.dart';
 import '../request/model/comments_model.dart';
 import '../request/model/people_model.dart';
 import '../request/model/post_model.dart';
+import '../request/model/profile_model.dart';
 import '../request/model/story_model.dart';
 import '../request/param/mock_request.dart';
 
@@ -28,4 +29,5 @@ abstract class IHomeRemoteSource extends RemoteDataSource {
   //////
   Future<Either<AppErrors, List<PostModel>>> getPosts(NoParams params);
   Future<Either<AppErrors, List<StoryModel>>> getStories(NoParams params);
+  Future<Either<AppErrors, ProfileModel>> getProfile(NoParams params);
 }

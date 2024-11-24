@@ -340,7 +340,8 @@ class VideoPlayerWidget extends StatefulWidget {
   State<VideoPlayerWidget> createState() => _VideoPlayerWidgetState();
 }
 
-class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
+class _VideoPlayerWidgetState extends State<VideoPlayerWidget>
+    with AutomaticKeepAliveClientMixin {
   late CachedVideoPlayerPlusController _controller;
   bool _isInitialized = false;
   bool _isPlaying = false;
@@ -406,8 +407,10 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return _isInitialized
         ? Stack(
+            fit: StackFit.expand,
             alignment: Alignment.center,
             children: [
               ClipRRect(
@@ -443,4 +446,7 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
             child: CircularProgressIndicator(),
           );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }

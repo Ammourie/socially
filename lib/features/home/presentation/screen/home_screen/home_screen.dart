@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:socially/core/constants/app/app_constants.dart';
 
 import '../../../../../core/ui/screens/base_screen.dart';
 import '../../state_m/cubit/home_cubit.dart';
@@ -75,9 +76,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
               ),
             ],
-            child: ScreenTypeLayout.builder(
-              mobile: (_) => const HomeScreenMobile(),
-              tablet: (_) => const HomeScreenTablet(),
+            child: Padding(
+              padding: EdgeInsets.all(AppConstants.screenPadding),
+              child: ScreenTypeLayout.builder(
+                mobile: (_) => const HomeScreenMobile(),
+                tablet: (_) => const HomeScreenTablet(),
+              ),
             ),
           ),
         );

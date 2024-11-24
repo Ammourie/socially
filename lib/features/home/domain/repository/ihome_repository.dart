@@ -14,6 +14,7 @@ import '../../data/request/param/mock_request.dart';
 import '../entity/comments_entity.dart';
 import '../entity/people_entity.dart';
 import '../entity/post_entity.dart';
+import '../entity/profile_entity.dart';
 import '../entity/story_entity.dart';
 
 part 'home_repository.dart';
@@ -30,4 +31,5 @@ abstract class IHomeRepository extends Repository {
 
   Future<Result<AppErrors, List<StoryEntity>>> getStories(NoParams noParams);
   Future<Result<AppErrors, List<PostEntity>>> getPosts(NoParams noParams);
+  Future<Result<AppErrors, ProfileEntity>> getProfile(NoParams noParams);
 }

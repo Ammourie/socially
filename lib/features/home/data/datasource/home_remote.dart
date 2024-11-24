@@ -406,4 +406,57 @@ class HomeRemoteSource extends IHomeRemoteSource {
 
     return right(dummyStories);
   }
+
+  @override
+  Future<Either<AppErrors, ProfileModel>> getProfile(NoParams params) async {
+    await Future.delayed(const Duration(seconds: 2));
+
+    final profile = ProfileModel(
+        userName: "John Smith",
+        profileImage: "https://i.pravatar.cc/300?img=1",
+        stories: [
+          MediaModel(
+            type: MediaType.image.value,
+            url:
+                "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&w=1200&h=800",
+          ),
+          MediaModel(
+            type: MediaType.video.value,
+            url:
+                "https://videos.pexels.com/video-files/1409899/1409899-uhd_2560_1440_25fps.mp4",
+          ),
+          MediaModel(
+            type: MediaType.image.value,
+            url:
+                "https://images.unsplash.com/photo-1426604966848-d7adac402bff?ixlib=rb-4.0.3&w=1200&h=800",
+          ),
+          MediaModel(
+            type: MediaType.video.value,
+            url:
+                "https://videos.pexels.com/video-files/1409899/1409899-uhd_2560_1440_25fps.mp4",
+          ),
+          MediaModel(
+            type: MediaType.image.value,
+            url:
+                "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?ixlib=rb-4.0.3&w=1200&h=800",
+          ),
+          MediaModel(
+            type: MediaType.video.value,
+            url:
+                "https://videos.pexels.com/video-files/5512609/5512609-hd_1080_1920_25fps.mp4",
+          ),
+          MediaModel(
+            type: MediaType.image.value,
+            url:
+                "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?ixlib=rb-4.0.3&w=1200&h=800",
+          ),
+          MediaModel(
+            type: MediaType.video.value,
+            url:
+                "https://videos.pexels.com/video-files/5512609/5512609-hd_1080_1920_25fps.mp4",
+          )
+        ]);
+
+    return right(profile);
+  }
 }

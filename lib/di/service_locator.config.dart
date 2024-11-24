@@ -35,6 +35,8 @@ import 'package:socially/features/home/domain/usecase/get_people_usecase.dart'
     as _i242;
 import 'package:socially/features/home/domain/usecase/get_posts_usecase.dart'
     as _i678;
+import 'package:socially/features/home/domain/usecase/get_profile_usecase.dart'
+    as _i435;
 import 'package:socially/features/home/domain/usecase/get_stories_usecase.dart'
     as _i403;
 import 'package:socially/features/home/domain/usecase/test_failure_usecase.dart'
@@ -137,6 +139,8 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i329.ReportProblemUsecase(gh<_i136.IMoreRepository>()));
     gh.singleton<_i301.CheckUpdateAppUsecase>(
         () => _i301.CheckUpdateAppUsecase(gh<_i136.IMoreRepository>()));
+    gh.factory<_i435.GetProfileUseCase>(
+        () => _i435.GetProfileUseCase(gh<_i433.IHomeRepository>()));
     return this;
   }
 }

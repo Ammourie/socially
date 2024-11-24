@@ -105,8 +105,8 @@ class _AppMainScreenState extends State<AppMainScreen> {
   }
 
   Widget _buildScaffold() {
-    return CustomScaffold(
-      backgroundColor: Theme.of(context).colorScheme.primary,
+    return Scaffold(
+      // backgroundColor: Theme.of(context).colorScheme.primary,
       bottomNavigationBar: _buildBottomNavigationBar(),
       body: ScreenTypeLayout.builder(
         mobile: (_) => _buildMobileLayout(),
@@ -166,7 +166,6 @@ class _AppMainScreenState extends State<AppMainScreen> {
 
   Widget _buildMobileLayout() {
     return Container(
-      padding: EdgeInsets.all(AppConstants.screenPadding),
       color: Theme.of(context).colorScheme.primary,
       child: const AppMainScreenContent(),
     );

@@ -53,4 +53,10 @@ class HomeRepository extends IHomeRepository {
     final remote = await remoteDataSource.getStories(noParams);
     return executeForList<StoryModel, StoryEntity>(remoteResult: remote);
   }
+
+  @override
+  Future<Result<AppErrors, ProfileEntity>> getProfile(NoParams noParams) async {
+    final remote = await remoteDataSource.getProfile(noParams);
+    return execute(remoteResult: remote);
+  }
 }

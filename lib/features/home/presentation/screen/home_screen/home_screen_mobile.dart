@@ -53,7 +53,6 @@ class _HomeScreenMobileState extends State<HomeScreenMobile> {
         child: Column(
           children: [
             _buildStories(isPortrait),
-            _vSpace,
             _buildPosts(isPortrait),
           ],
         ),
@@ -70,18 +69,15 @@ class _HomeScreenMobileState extends State<HomeScreenMobile> {
           homeLoadingState: _buildPostsLoading,
           homeInitState: _buildPostsLoading,
           homeErrorState: _buildErrorWidget,
-          postsLoadedState: (posts) => Padding(
-            padding: EdgeInsets.symmetric(horizontal: 4.sp),
-            child: ListView.separated(
-              shrinkWrap: true,
-              itemCount: posts.length,
-              physics: const NeverScrollableScrollPhysics(),
-              separatorBuilder: (context, index) =>
-                  isPortrait ? 18.verticalSpace : 24.verticalSpace,
-              itemBuilder: (context, index) {
-                return PostWidget(post: posts[index]);
-              },
-            ),
+          postsLoadedState: (posts) => ListView.separated(
+            shrinkWrap: true,
+            itemCount: posts.length,
+            physics: const NeverScrollableScrollPhysics(),
+            separatorBuilder: (context, index) =>
+                isPortrait ? 18.verticalSpace : 24.verticalSpace,
+            itemBuilder: (context, index) {
+              return PostWidget(post: posts[index]);
+            },
           ), // Dummy implementation
         );
       },
@@ -167,6 +163,7 @@ class _HomeScreenMobileState extends State<HomeScreenMobile> {
           CustomImage.asset(
             AppConstants.IMAGE_SOCIALY,
             height: isPortrait ? 20.sp : 10.sp,
+            color: Colors.white,
           ),
           SizedBox(
             width: isPortrait ? 25.sp : 15.sp,

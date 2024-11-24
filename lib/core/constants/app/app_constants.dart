@@ -98,9 +98,9 @@ class AppConstants {
   static const THRESHOLD = 720;
 
   /// images
-  static const IMAGE_SOCIALY = "assets/images/png/socialy.png";
 
   /// svg
+  static const IMAGE_SOCIALY = "assets/images/svg/Socially.svg";
   static const SVG_CIRCLE_USER_SOLID =
       'assets/images/svg/circle-user-solid.svg';
   static const SVG_CIRCLE_USER_OUTLINE =
