@@ -12,7 +12,6 @@ import '../../../../../core/firebase/firebase_messaging.dart';
 import '../../../../../core/ui/error_ui/error_viewer/error_viewer.dart';
 import '../../../../../core/ui/screens/base_screen.dart';
 import '../../../../../core/ui/widgets/custom_image.dart';
-import '../../../../../core/ui/widgets/custom_scaffold.dart';
 import '../../../../../core/ui/widgets/system/double_tap_back_exit_app.dart';
 import '../../../../account/presentation/state_m/cubit/account_cubit.dart';
 import '../../state_m/provider/app_main_screen_notifier.dart';

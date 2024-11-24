@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
@@ -71,6 +73,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     orElse: () {},
                     storiesLoadedState: (stories) {
                       sn.stories = stories;
+                      log("stories loaded: ${stories}");
                     },
                   );
                 },

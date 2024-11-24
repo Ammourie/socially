@@ -113,6 +113,8 @@ dependencies:
   flutter_local_notifications: 17.2.2
   # A Flutter plugin to use the Firebase Cloud Messaging API.
   firebase_messaging: 15.0.4
+  # A Flutter plugin for Firebase Cloud Firestore.
+  cloud_firestore: 5.2.1
   # A library for creating locks to ensure mutual exclusion when running critical sections of code.
   mutex: 3.1.0
   # A Flutter package for dynamically changing status bar color based on the background.

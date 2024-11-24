@@ -15,7 +15,7 @@ class AppSettings {
   static const enableDioPrinting = true;
   static const enableErrorCatcher = true;
   static const forceLocationPermission = false;
-  static const enableNotification = false;
+  static const enableNotification = true;
   static const enableBranchIO = false;
 
   // App Colors

@@ -44,9 +44,9 @@ class StoryModel extends BaseModel<StoryEntity> {
           listV(map['media']).map((item) => MediaModel.fromMap(item)).toList(),
       title: stringV(map['title']),
       subtitle: stringV(map['subtitle']),
-      userName: stringV(map['user_name']),
-      userImage: stringV(map['user_image']),
-      createdAt: dateTimeV(map['created_at']),
+      userName: stringV(map['userName']),
+      userImage: stringV(map['userImage']),
+      createdAt: dateTimeV(map['createdAt']),
     );
   }
 }

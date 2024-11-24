@@ -46,7 +46,7 @@ class PostModel extends BaseModel<PostEntity> {
       userName: stringV(map['userName']),
       content: stringV(map['content']),
       likes: numV(map['likes']),
-      comments: listV(map['comments']),
+      comments: listV(map['comments']).map((e) => stringV(e)).toList(),
       createdAt: dateTimeV(map['createdAt']),
       mediaList:
           listV(map['mediaList']).map((e) => MediaModel.fromMap(e)).toList(),
