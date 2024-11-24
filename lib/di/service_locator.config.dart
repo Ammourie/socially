@@ -25,6 +25,8 @@ import 'package:socially/features/account/domain/usecase/login_usecase.dart'
     as _i902;
 import 'package:socially/features/account/domain/usecase/register_usecase.dart'
     as _i832;
+import 'package:socially/features/home/data/datasource/ihome_local.dart'
+    as _i327;
 import 'package:socially/features/home/data/datasource/ihome_remote.dart'
     as _i116;
 import 'package:socially/features/home/domain/repository/ihome_repository.dart'
@@ -98,31 +100,20 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i116.IHomeRemoteSource>(() => _i116.HomeRemoteSource());
     gh.singleton<_i635.IUploadRepository>(
         () => _i635.UploadRepository(gh<_i139.IUploadRemoteSource>()));
+    gh.factory<_i327.IHomeLocalSource>(() => _i327.HomeLocalSource());
     gh.factory<_i981.IAccountRemoteSource>(() => _i981.AccountRemoteSource());
     gh.singleton<_i136.IMoreRepository>(
         () => _i136.MoreRepository(gh<_i459.IMoreRemoteSource>()));
     gh.factory<_i267.IAccountRepository>(
         () => _i267.AccountRepository(gh<_i981.IAccountRemoteSource>()));
-    gh.factory<_i433.IHomeRepository>(
-        () => _i433.HomeRepository(gh<_i116.IHomeRemoteSource>()));
-    gh.factory<_i82.CommentsUseCase>(
-        () => _i82.CommentsUseCase(gh<_i433.IHomeRepository>()));
-    gh.factory<_i242.GetPeopleUseCase>(
-        () => _i242.GetPeopleUseCase(gh<_i433.IHomeRepository>()));
-    gh.factory<_i678.GetPostsUseCase>(
-        () => _i678.GetPostsUseCase(gh<_i433.IHomeRepository>()));
-    gh.factory<_i403.GetStoriesUseCase>(
-        () => _i403.GetStoriesUseCase(gh<_i433.IHomeRepository>()));
-    gh.factory<_i71.TestFailureUseCase>(
-        () => _i71.TestFailureUseCase(gh<_i433.IHomeRepository>()));
-    gh.factory<_i1068.TestSuccessUseCase>(
-        () => _i1068.TestSuccessUseCase(gh<_i433.IHomeRepository>()));
-    gh.factory<_i30.TestValidatorUseCase>(
-        () => _i30.TestValidatorUseCase(gh<_i433.IHomeRepository>()));
     gh.factory<_i902.LoginUseCase>(
         () => _i902.LoginUseCase(gh<_i267.IAccountRepository>()));
     gh.factory<_i832.RegisterUseCase>(
         () => _i832.RegisterUseCase(gh<_i267.IAccountRepository>()));
+    gh.factory<_i433.IHomeRepository>(() => _i433.HomeRepository(
+          gh<_i116.IHomeRemoteSource>(),
+          gh<_i327.IHomeLocalSource>(),
+        ));
     gh.singleton<_i56.INotificationRepository>(() =>
         _i56.NotificationRepository(gh<_i1041.INotificationRemoteSource>()));
     gh.singleton<_i160.UploadFileUsecase>(
@@ -141,6 +132,20 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i301.CheckUpdateAppUsecase(gh<_i136.IMoreRepository>()));
     gh.factory<_i435.GetProfileUseCase>(
         () => _i435.GetProfileUseCase(gh<_i433.IHomeRepository>()));
+    gh.factory<_i82.CommentsUseCase>(
+        () => _i82.CommentsUseCase(gh<_i433.IHomeRepository>()));
+    gh.factory<_i242.GetPeopleUseCase>(
+        () => _i242.GetPeopleUseCase(gh<_i433.IHomeRepository>()));
+    gh.factory<_i678.GetPostsUseCase>(
+        () => _i678.GetPostsUseCase(gh<_i433.IHomeRepository>()));
+    gh.factory<_i403.GetStoriesUseCase>(
+        () => _i403.GetStoriesUseCase(gh<_i433.IHomeRepository>()));
+    gh.factory<_i71.TestFailureUseCase>(
+        () => _i71.TestFailureUseCase(gh<_i433.IHomeRepository>()));
+    gh.factory<_i1068.TestSuccessUseCase>(
+        () => _i1068.TestSuccessUseCase(gh<_i433.IHomeRepository>()));
+    gh.factory<_i30.TestValidatorUseCase>(
+        () => _i30.TestValidatorUseCase(gh<_i433.IHomeRepository>()));
     return this;
   }
 }

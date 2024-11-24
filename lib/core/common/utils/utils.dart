@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:animated_theme_switcher/animated_theme_switcher.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
 import '../local_storage.dart';
@@ -66,6 +67,22 @@ class Utils {
       );
     } catch (e) {
       showToast(S.current.errorOccurred);
+    }
+  }
+
+  static Future<bool> hasInternetConnection() async {
+    try {
+      final List<ConnectivityResult> connectivityResult =
+          await Connectivity().checkConnectivity();
+
+      return connectivityResult.contains(ConnectivityResult.mobile) ||
+          connectivityResult.contains(ConnectivityResult.wifi) ||
+          connectivityResult.contains(ConnectivityResult.ethernet) ||
+          connectivityResult.contains(ConnectivityResult.vpn) ||
+          connectivityResult.contains(ConnectivityResult.bluetooth) ||
+          connectivityResult.contains(ConnectivityResult.other);
+    } catch (e) {
+      return false;
     }
   }
 }

@@ -4,7 +4,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hive/hive.dart';
 import 'package:intl/intl.dart';
+import 'package:path_provider/path_provider.dart';
 
 import 'app.dart';
 import 'core/background_task/background_tasks_manager.dart';
@@ -38,6 +40,9 @@ void main() async {
 Future<void> _initAppConfigs() async {
   WidgetsFlutterBinding.ensureInitialized();
   await LocalStorage.init();
+
+  final dir = await getApplicationDocumentsDirectory();
+  Hive.init(dir.path);
 
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
 

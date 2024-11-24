@@ -146,7 +146,12 @@ dependencies:
   # A Flutter package for displaying relative time ago in a human readable way.
   timeago_flutter: 3.7.0
   # A Flutter widget that displays a grid of children in a staggered format.
-  flutter_staggered_grid_view: 0.7.0
+  flutter_staggered_grid_view: ^0.7.0
+  # A lightweight and blazing fast key-value database written in pure Dart
+  hive: 2.2.3
+  # A Flutter plugin for checking network connectivity and change callbacks.
+  connectivity_plus: 6.1.0
+
 
 dev_dependencies:
   flutter_test:

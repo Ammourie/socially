@@ -82,6 +82,9 @@ class HomeRemoteSource extends IHomeRemoteSource {
 
       List<PostModel> posts =
           List<PostModel>.from(items.map((post) => PostModel.fromMap(post)));
+      var box = await Hive.openBox<List>('posts');
+      await box.put('posts', items);
+      await box.close();
       return right(posts);
     } catch (e) {
       return left(
@@ -112,13 +115,18 @@ class HomeRemoteSource extends IHomeRemoteSource {
       final items = listV(storiesData['items']);
       List<StoryModel> stories = List<StoryModel>.from(
           items.map((story) => StoryModel.fromMap(story)));
+      var box = await Hive.openBox<List>('stories');
+      await box.put('stories', items);
+      await box.close();
+
       return right(stories);
     } catch (e) {
+      print(e.toString());
       return left(
-        AppErrors.internalServerWithDataError(
+        const AppErrors.internalServerWithDataError(
           500,
           type: ErrorCodeType.Unkown,
-          message: e.toString(),
+          message: "Unknown error",
         ),
       );
     }
@@ -139,7 +147,11 @@ class HomeRemoteSource extends IHomeRemoteSource {
           message: "Profile data is null",
         ));
       }
+      var box = await Hive.openBox<Map<String, dynamic>>('profile');
+      await box.put('my_profile', profileData);
       ProfileModel profile = ProfileModel.fromJson(profileData);
+      await box.close();
+
       return right(profile);
     } catch (e) {
       return left(

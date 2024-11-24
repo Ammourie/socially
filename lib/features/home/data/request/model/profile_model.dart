@@ -1,9 +1,7 @@
 import 'package:socially/core/common/extensions/extensions.dart';
-import 'package:socially/core/entities/base_entity.dart';
 import 'package:socially/core/models/base_model.dart';
 import 'package:socially/features/home/data/request/model/story_model.dart';
 import 'package:socially/features/home/domain/entity/profile_entity.dart';
-import 'package:socially/features/home/domain/entity/story_entity.dart';
 
 import '../../../../../core/common/type_validators.dart';
 
