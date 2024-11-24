@@ -33,6 +33,7 @@ class PostWidget extends StatefulWidget {
 
 class _PostWidgetState extends State<PostWidget> {
   List<MediaEntity> mediaToShow = [];
+  bool isPortrait = false;
   @override
   void initState() {
     super.initState();
@@ -41,6 +42,8 @@ class _PostWidgetState extends State<PostWidget> {
 
   @override
   Widget build(BuildContext context) {
+    isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
+
     return Container(
       padding: EdgeInsets.all(12.sp),
       decoration: BoxDecoration(
@@ -66,7 +69,7 @@ class _PostWidgetState extends State<PostWidget> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         CircleAvatar(
-          radius: 22.r,
+          radius: isPortrait ? 22.r : 50.r,
           backgroundImage: CachedNetworkImageProvider(widget.post.userImage),
         ),
         12.horizontalSpace,

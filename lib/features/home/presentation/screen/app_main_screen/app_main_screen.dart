@@ -37,7 +37,7 @@ class AppMainScreen extends BaseScreen<AppMainScreenParam> {
 
 class _AppMainScreenState extends State<AppMainScreen> {
   late final AppMainScreenNotifier sn;
-
+  bool isPortrait = false;
   @override
   void initState() {
     super.initState();
@@ -60,6 +60,7 @@ class _AppMainScreenState extends State<AppMainScreen> {
 
   @override
   Widget build(BuildContext context) {
+    isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     return ChangeNotifierProvider<AppMainScreenNotifier>.value(
       value: sn,
       builder: (context, child) {
@@ -119,8 +120,8 @@ class _AppMainScreenState extends State<AppMainScreen> {
       mobile: (_) => Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.only(
-            topRight: Radius.circular(12.sp),
-            topLeft: Radius.circular(12.sp),
+            topRight: Radius.circular(isPortrait ? 12.r : 24.r),
+            topLeft: Radius.circular(isPortrait ? 12.r : 24.r),
           ),
           boxShadow: [
             const BoxShadow(
@@ -132,11 +133,11 @@ class _AppMainScreenState extends State<AppMainScreen> {
         ),
         child: ClipRRect(
           borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(12.r),
-            topRight: Radius.circular(12.r),
+            topLeft: Radius.circular(isPortrait ? 12.r : 24.r),
+            topRight: Radius.circular(isPortrait ? 12.r : 24.r),
           ),
           child: NavigationBar(
-            height: 35.h,
+            height: isPortrait ? 35.h : 40.h,
             indicatorColor: Colors.transparent,
             labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
             destinations: _buildNavigationBarDestinations(),

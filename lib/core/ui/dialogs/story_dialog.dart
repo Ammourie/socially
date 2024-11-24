@@ -184,7 +184,7 @@ class _StoryDialogState extends State<StoryDialog>
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.transparent,
+      color: Theme.of(context).primaryColor,
       child: GestureDetector(
         onTapUp: _handleTap,
         onVerticalDragEnd: _handleVerticalDrag,
@@ -252,7 +252,6 @@ class _StoryDialogState extends State<StoryDialog>
     return Container(
       width: 1.sw,
       height: 1.sh,
-      color: Theme.of(context).primaryColor,
       child: _imageFile != null
           ? Image.file(_imageFile!, fit: BoxFit.contain)
           : CachedNetworkImage(imageUrl: url, fit: BoxFit.contain),
@@ -371,7 +370,7 @@ class _StoryDialogState extends State<StoryDialog>
       widget.story.subtitle,
       style: TextThemeStyles.robotoRegular.copyWith(
         color: Colors.white70,
-        fontSize: 28.sp,
+        fontSize: 11.sp,
       ),
     );
   }
