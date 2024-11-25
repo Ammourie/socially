@@ -158,7 +158,12 @@ class _AppMainScreenState extends State<AppMainScreen> {
           selectedIndex: sn.selectedIndex,
           onDestinationSelected: sn.onDestinationSelected,
         ),
-        const Expanded(child: AppMainScreenContent()),
+        Expanded(
+          child: Container(
+            child: AppMainScreenContent(),
+            color: Theme.of(context).colorScheme.primary,
+          ),
+        ),
       ],
     );
   }

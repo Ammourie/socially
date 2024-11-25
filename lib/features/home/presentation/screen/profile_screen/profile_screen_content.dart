@@ -39,28 +39,20 @@ class _ProfileScreenContentState extends State<ProfileScreenContent> {
   Widget build(BuildContext context) {
     isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     return SafeArea(
-      child: Column(
-        children: [
-          _buildTopBar(),
-          12.verticalSpace,
-          Expanded(
-            child: BlocBuilder<ProfileCubit, ProfileState>(
-              bloc: sn.profileCubit,
-              builder: (context, state) {
-                return state.maybeWhen(
-                  orElse: () => const ScreenNotImplementedErrorWidget(),
-                  profileLoadingState: () => const WaitingWidget(),
-                  profileInitState: () => const WaitingWidget(),
-                  profileErrorState: (error, callback) => ErrorScreenWidget(
-                    error: error,
-                    callback: callback,
-                  ),
-                  profileLoadedState: (_) => _buildProfile(),
-                );
-              },
+      child: BlocBuilder<ProfileCubit, ProfileState>(
+        bloc: sn.profileCubit,
+        builder: (context, state) {
+          return state.maybeWhen(
+            orElse: () => const ScreenNotImplementedErrorWidget(),
+            profileLoadingState: () => const WaitingWidget(),
+            profileInitState: () => const WaitingWidget(),
+            profileErrorState: (error, callback) => ErrorScreenWidget(
+              error: error,
+              callback: callback,
             ),
-          ),
-        ],
+            profileLoadedState: (_) => _buildProfile(),
+          );
+        },
       ),
     );
   }
@@ -68,6 +60,8 @@ class _ProfileScreenContentState extends State<ProfileScreenContent> {
   Widget _buildProfile() {
     return Column(
       children: [
+        _buildTopBar(),
+        12.verticalSpace,
         if (isPortrait) ...[
           _buildProfileImage(),
           _buildUserName(),
