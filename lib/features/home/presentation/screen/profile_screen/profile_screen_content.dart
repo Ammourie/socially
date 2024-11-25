@@ -201,9 +201,11 @@ class _ProfileScreenContentState extends State<ProfileScreenContent> {
 
   Widget _buildTopBar() {
     double logoSize = sn.isTablet
-        ? 7.sp
+        ? isPortrait
+            ? 7.sp
+            : 10.sp
         : isPortrait
-            ? 20
+            ? 20.sp
             : 10.sp;
     double iconSize = sn.isTablet
         ? 7.sp
