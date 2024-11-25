@@ -5,6 +5,8 @@ import '../cubit/profile_cubit.dart';
 
 class ProfileScreenNotifier extends ScreenNotifier {
   final ProfileCubit profileCubit = ProfileCubit();
+  final bool isTablet;
+  ProfileScreenNotifier({required this.isTablet});
 
   ///fields
   late ProfileEntity _profileEntity;

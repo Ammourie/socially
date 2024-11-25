@@ -38,6 +38,8 @@ class CustomCarousel extends StatefulWidget {
     this.title,
     this.titleStyle,
     this.carouselContainerBorder,
+    this.isTablet = false,
+    this.disableCenter = false,
   });
   final double carouselBorderRadius, carouselContainerBorderRadius;
   final EdgeInsetsGeometry padding, margin, titlePadding;
@@ -57,6 +59,7 @@ class CustomCarousel extends StatefulWidget {
   final String? title;
   final TextStyle? titleStyle;
   final BoxBorder? carouselContainerBorder;
+  final bool isTablet, disableCenter;
   @override
   State<CustomCarousel> createState() => _CustomCarouselState();
 }
@@ -113,9 +116,9 @@ class _CustomCarouselState extends State<CustomCarousel> {
         controller: PageController(initialPage: _currentPage),
         count: widget.items.length,
         effect: WormEffect(
-          dotHeight: 8.sp,
-          dotWidth: 8.sp,
-          spacing: 8.sp,
+          dotHeight: widget.isTablet ? 4.sp : 8.sp,
+          dotWidth: widget.isTablet ? 4.sp : 8.sp,
+          spacing: widget.isTablet ? 3.sp : 8.sp,
           activeDotColor: Colors.white,
           dotColor: Colors.grey,
         ),
@@ -154,6 +157,7 @@ class _CustomCarouselState extends State<CustomCarousel> {
       child: CarouselSlider(
         items: widget.items,
         options: CarouselOptions(
+          disableCenter: widget.disableCenter,
           animateToClosest: widget.animateToClosest,
           autoPlay: widget.autoPlay,
           aspectRatio: widget.aspectRatio,

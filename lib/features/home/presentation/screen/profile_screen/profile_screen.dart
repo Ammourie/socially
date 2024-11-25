@@ -7,7 +7,10 @@ import '../../state_m/cubit/profile_cubit.dart';
 import '../../state_m/provider/profile_screen_notifier.dart';
 import 'profile_screen_content.dart';
 
-class ProfileScreenParam {}
+class ProfileScreenParam {
+  final bool isTablet;
+  ProfileScreenParam({this.isTablet = false});
+}
 
 class ProfileScreen extends BaseScreen<ProfileScreenParam> {
   const ProfileScreen({super.key, required super.param});
@@ -21,7 +24,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   void initState() {
     super.initState();
-    sn = ProfileScreenNotifier();
+    sn = ProfileScreenNotifier(isTablet: widget.param.isTablet);
     sn.getProfile();
   }
 

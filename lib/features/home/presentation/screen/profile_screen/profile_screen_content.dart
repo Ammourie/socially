@@ -37,7 +37,8 @@ class _ProfileScreenContentState extends State<ProfileScreenContent> {
   bool isPortrait = false;
   @override
   Widget build(BuildContext context) {
-    isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
+    isPortrait = MediaQuery.of(context).orientation == Orientation.portrait ||
+        sn.isTablet;
     return SafeArea(
       child: BlocBuilder<ProfileCubit, ProfileState>(
         bloc: sn.profileCubit,
@@ -71,7 +72,10 @@ class _ProfileScreenContentState extends State<ProfileScreenContent> {
         ],
         Expanded(
           child: GridView.custom(
-            padding: EdgeInsets.symmetric(horizontal: 10.sp),
+            padding: EdgeInsets.symmetric(
+              horizontal: !sn.isTablet ? 10.sp : 4.sp,
+              vertical: !sn.isTablet ? 10.sp : 4.sp,
+            ),
             shrinkWrap: true,
             gridDelegate: SliverQuiltedGridDelegate(
               crossAxisCount: 3,
@@ -134,6 +138,16 @@ class _ProfileScreenContentState extends State<ProfileScreenContent> {
   }
 
   Widget _exploreButton() {
+    double iconSize = sn.isTablet
+        ? 7.sp
+        : isPortrait
+            ? 25.sp
+            : 15.sp;
+    double fontSize = sn.isTablet
+        ? 7.sp
+        : isPortrait
+            ? 18.sp
+            : 12.sp;
     return GestureDetector(
       onTap: () {
         context.read<AppMainScreenNotifier>().selectedIndex = 0;
@@ -143,13 +157,13 @@ class _ProfileScreenContentState extends State<ProfileScreenContent> {
         children: [
           Icon(
             Icons.arrow_back,
-            size: isPortrait ? 25.sp : 15.sp,
+            size: iconSize,
           ),
           4.horizontalSpace,
           Text(
             "Explore",
             style: TextThemeStyles.robotoRegular.copyWith(
-              fontSize: isPortrait ? 18.sp : 12.sp,
+              fontSize: fontSize,
             ),
           )
         ],
@@ -158,17 +172,27 @@ class _ProfileScreenContentState extends State<ProfileScreenContent> {
   }
 
   Text _buildUserName() {
+    double fontSize = sn.isTablet
+        ? 8.sp
+        : isPortrait
+            ? 30.sp
+            : 15.sp;
     return Text(
       sn.profileEntity.userName,
       style: TextThemeStyles.robotoBold.copyWith(
-        fontSize: isPortrait ? 30.sp : 15.sp,
+        fontSize: fontSize,
       ),
     );
   }
 
   CircleAvatar _buildProfileImage() {
+    double radius = sn.isTablet
+        ? 25.sp
+        : isPortrait
+            ? 90.sp
+            : 10.sp;
     return CircleAvatar(
-      radius: isPortrait ? 90.sp : 10.sp,
+      radius: radius,
       backgroundImage: CachedNetworkImageProvider(
         sn.profileEntity.profileImage,
       ),
@@ -176,6 +200,16 @@ class _ProfileScreenContentState extends State<ProfileScreenContent> {
   }
 
   Widget _buildTopBar() {
+    double logoSize = sn.isTablet
+        ? 7.sp
+        : isPortrait
+            ? 20
+            : 10.sp;
+    double iconSize = sn.isTablet
+        ? 7.sp
+        : isPortrait
+            ? 20.sp
+            : 10.sp;
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 10.sp),
       child: Row(
@@ -183,29 +217,29 @@ class _ProfileScreenContentState extends State<ProfileScreenContent> {
         children: [
           isPortrait
               ? SizedBox(
-                  width: 25.sp,
-                  height: 25.sp,
+                  width: iconSize,
+                  height: iconSize,
                 )
               : _buildProfileImage(),
           CustomImage.asset(
             AppConstants.IMAGE_SOCIALY,
-            height: isPortrait ? 20.sp : 10.sp,
+            height: logoSize,
           ),
-          _buildNotificationIcon(),
+          _buildNotificationIcon(iconSize),
         ],
       ),
     );
   }
 
-  Widget _buildNotificationIcon() {
+  Widget _buildNotificationIcon(double iconSize) {
     return InkWell(
       onTap: () {
         showToast('Notifications');
       },
       child: CustomImage.asset(
         AppConstants.SVG_BELL,
-        width: isPortrait ? 25.sp : 15.sp,
-        height: isPortrait ? 25.sp : 15.sp,
+        width: iconSize,
+        height: iconSize,
         color: Theme.of(context).colorScheme.primary,
       ),
     );

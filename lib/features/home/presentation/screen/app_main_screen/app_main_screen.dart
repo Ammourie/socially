@@ -160,7 +160,7 @@ class _AppMainScreenState extends State<AppMainScreen> {
         ),
         Expanded(
           child: Container(
-            child: AppMainScreenContent(),
+            child: const AppMainScreenContent(),
             color: Theme.of(context).colorScheme.primary,
           ),
         ),

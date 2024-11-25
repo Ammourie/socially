@@ -78,7 +78,7 @@ class _HomeScreenMobileState extends State<HomeScreenMobile> {
             itemBuilder: (context, index) {
               return PostWidget(post: posts[index]);
             },
-          ), // Dummy implementation
+          ),
         );
       },
     );

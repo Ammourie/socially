@@ -14,6 +14,7 @@ import '../../theme/text_theme_styles.dart';
 
 Future<void> showStoryDialog({
   required StoryEntity story,
+  bool isTablet = false,
 }) {
   return showGeneralDialog(
     context: AppConfig().appContext!,
@@ -23,7 +24,10 @@ Future<void> showStoryDialog({
     barrierColor: Colors.black87,
     transitionDuration: const Duration(milliseconds: 300),
     pageBuilder: (context, animation1, animation2) {
-      return StoryDialog(story: story);
+      return Padding(
+        padding: EdgeInsets.symmetric(horizontal: 0.3.sw),
+        child: StoryDialog(story: story, isTablet: isTablet),
+      );
     },
     transitionBuilder: (context, animation1, animation2, child) {
       return SlideTransition(
@@ -39,10 +43,12 @@ Future<void> showStoryDialog({
 
 class StoryDialog extends StatefulWidget {
   final StoryEntity story;
+  final bool isTablet;
 
   const StoryDialog({
     Key? key,
     required this.story,
+    this.isTablet = false,
   }) : super(key: key);
 
   @override
@@ -324,14 +330,15 @@ class _StoryDialogState extends State<StoryDialog>
 
   Widget _buildUserInfo() {
     return PositionedDirectional(
-      top: 20.sp,
-      start: 20.sp,
+      top: widget.isTablet ? 8.sp : 20.sp,
+      start: widget.isTablet ? 8.sp : 20.sp,
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           _buildBackButton(),
-          12.horizontalSpace,
+          if (!widget.isTablet) 12.horizontalSpace else 4.horizontalSpace,
           _buildUserName(),
-          12.horizontalSpace,
+          if (!widget.isTablet) 12.horizontalSpace else 4.horizontalSpace,
           _buildSubtitle(),
         ],
       ),
@@ -342,16 +349,16 @@ class _StoryDialogState extends State<StoryDialog>
     return GestureDetector(
       onTap: () => Navigator.of(context).pop(),
       child: Container(
-        padding: EdgeInsets.all(10.sp),
+        padding: EdgeInsets.all(widget.isTablet ? 2.sp : 10.sp),
         alignment: Alignment.center,
         decoration: BoxDecoration(
           color: Colors.grey,
           border: Border.all(color: Colors.grey, width: 1),
-          borderRadius: BorderRadius.circular(10.sp),
+          borderRadius: BorderRadius.circular(widget.isTablet ? 4.sp : 10.sp),
         ),
         child: Icon(
           Icons.arrow_back,
-          size: 20.sp,
+          size: widget.isTablet ? 10.sp : 20.sp,
           color: const Color.fromARGB(255, 58, 3, 153),
         ),
       ),
@@ -361,7 +368,10 @@ class _StoryDialogState extends State<StoryDialog>
   Widget _buildUserName() {
     return Text(
       widget.story.userName,
-      style: TextThemeStyles.robotoBold.copyWith(color: Colors.white),
+      style: TextThemeStyles.robotoBold.copyWith(
+        color: Colors.white,
+        fontSize: widget.isTablet ? 10.sp : 16.sp,
+      ),
     );
   }
 
@@ -370,7 +380,7 @@ class _StoryDialogState extends State<StoryDialog>
       widget.story.subtitle,
       style: TextThemeStyles.robotoRegular.copyWith(
         color: Colors.white70,
-        fontSize: 11.sp,
+        fontSize: widget.isTablet ? 7.sp : 11.sp,
       ),
     );
   }

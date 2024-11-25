@@ -23,9 +23,11 @@ class PostWidget extends StatefulWidget {
   const PostWidget({
     super.key,
     required this.post,
+    this.isTablet = false,
   });
 
   final PostEntity post;
+  final bool isTablet;
 
   @override
   State<PostWidget> createState() => _PostWidgetState();
@@ -45,9 +47,9 @@ class _PostWidgetState extends State<PostWidget> {
     isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
 
     return Container(
-      padding: EdgeInsets.all(12.sp),
+      padding: EdgeInsets.all(widget.isTablet ? 7.sp : 12.sp),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: widget.isTablet ? Colors.grey.shade100 : Colors.white,
         borderRadius: BorderRadius.circular(20.r),
       ),
       child: Column(
@@ -65,18 +67,24 @@ class _PostWidgetState extends State<PostWidget> {
   }
 
   Widget _buildHeader(BuildContext context) {
+    double avatarRadius = isPortrait
+        ? 22.r
+        : widget.isTablet
+            ? 20.r
+            : 50.r;
+    double fontSize = widget.isTablet ? 10.sp : 17.sp;
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         CircleAvatar(
-          radius: isPortrait ? 22.r : 50.r,
+          radius: avatarRadius,
           backgroundImage: CachedNetworkImageProvider(widget.post.userImage),
         ),
-        12.horizontalSpace,
+        if (!widget.isTablet) 12.horizontalSpace else 4.horizontalSpace,
         Text(
           widget.post.userName,
           style: TextThemeStyles.gloryBold.copyWith(
-            fontSize: 17.sp,
+            fontSize: fontSize,
           ),
         ),
         const Spacer(),
@@ -84,7 +92,7 @@ class _PostWidgetState extends State<PostWidget> {
           timeago.format(widget.post.createdAt!),
           style: TextThemeStyles.gloryRegular.copyWith(
             color: Colors.grey,
-            fontSize: 13.sp,
+            fontSize: fontSize - 3.sp,
           ),
         ),
       ],
@@ -93,13 +101,13 @@ class _PostWidgetState extends State<PostWidget> {
 
   Widget _buildContent() {
     if (!widget.post.content.isNotEmpty) return const SizedBox.shrink();
-
+    double fontSize = widget.isTablet ? 8.sp : 14.sp;
     return Column(
       children: [
         8.verticalSpace,
         Text(
           widget.post.content,
-          style: TextThemeStyles.gloryRegular.copyWith(fontSize: 14.sp),
+          style: TextThemeStyles.gloryRegular.copyWith(fontSize: fontSize),
         ),
       ],
     );
@@ -113,7 +121,9 @@ class _PostWidgetState extends State<PostWidget> {
         children: [
           12.verticalSpace,
           CustomCarousel(
-            aspectRatio: 1.2,
+            isTablet: widget.isTablet,
+            disableCenter: true,
+            aspectRatio: !widget.isTablet ? 1.2 : 2,
             padEnds: true,
             viewportFraction: 1,
             enlargeCenterPage: true,
@@ -136,7 +146,7 @@ class _PostWidgetState extends State<PostWidget> {
         12.verticalSpace,
         if (mediaToShow.length == 1)
           SizedBox(
-            height: 200.sp,
+            height: !widget.isTablet ? 200.sp : 100.sp,
             width: double.infinity,
             child: _buildMediaTileContent(
               mediaToShow[0],
@@ -145,7 +155,7 @@ class _PostWidgetState extends State<PostWidget> {
           )
         else
           SizedBox(
-            height: 200.sp,
+            height: !widget.isTablet ? 200.sp : 140.sp,
             child: GridView.custom(
               physics: const NeverScrollableScrollPhysics(),
               gridDelegate: SliverQuiltedGridDelegate(
@@ -206,13 +216,14 @@ class _PostWidgetState extends State<PostWidget> {
   }
 
   Widget _buildStat(String svgPath, {String? text}) {
+    double fontSize = widget.isTablet ? 7.sp : 14.sp;
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
         CustomImage.asset(
           svgPath,
-          width: 20.sp,
-          height: 20.sp,
+          width: widget.isTablet ? 10.sp : 20.sp,
+          height: widget.isTablet ? 10.sp : 20.sp,
           color: Colors.grey,
         ),
         if (text != null) ...[
@@ -220,7 +231,7 @@ class _PostWidgetState extends State<PostWidget> {
           Text(
             text,
             style: TextThemeStyles.gloryRegular.copyWith(
-              fontSize: 14.sp,
+              fontSize: fontSize,
               color: Colors.grey,
             ),
           )
