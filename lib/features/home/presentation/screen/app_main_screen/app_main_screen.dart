@@ -178,7 +178,7 @@ class _AppMainScreenState extends State<AppMainScreen> {
 
   List<NavigationRailDestination> _buildNavigationDestinations() {
     double iconSize = 8.sp;
-    Color iconColor = AppColors.navBarIconColor;
+    Color iconColor = Colors.black;
     return <NavigationRailDestination>[
       NavigationRailDestination(
         icon: CustomImage.asset(
