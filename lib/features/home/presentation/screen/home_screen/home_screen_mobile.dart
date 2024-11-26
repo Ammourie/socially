@@ -36,20 +36,23 @@ class _HomeScreenMobileState extends State<HomeScreenMobile> {
     );
   }
 
-  Column _buildScreen(bool isPortrait) {
-    return Column(
-      children: [
-        _vSpace,
-        _buildTopBar(isPortrait),
-        _vSpace,
-        _builldBody(isPortrait),
-      ],
+  Widget _buildScreen(bool isPortrait) {
+    return SafeArea(
+      child: Column(
+        children: [
+          _vSpace,
+          _buildTopBar(isPortrait),
+          _vSpace,
+          _builldBody(isPortrait),
+        ],
+      ),
     );
   }
 
   Widget _builldBody(bool isPortrait) {
     return Expanded(
       child: SingleChildScrollView(
+        padding: EdgeInsets.symmetric(horizontal: 10.sp, vertical: 4.sp),
         child: Column(
           children: [
             _buildStories(isPortrait),
@@ -74,7 +77,7 @@ class _HomeScreenMobileState extends State<HomeScreenMobile> {
             itemCount: posts.length,
             physics: const NeverScrollableScrollPhysics(),
             separatorBuilder: (context, index) =>
-                isPortrait ? 18.verticalSpace : 24.verticalSpace,
+                isPortrait ? 10.verticalSpace : 16.verticalSpace,
             itemBuilder: (context, index) {
               return PostWidget(post: posts[index]);
             },
@@ -90,8 +93,8 @@ class _HomeScreenMobileState extends State<HomeScreenMobile> {
       builder: (context, state) {
         return state.maybeWhen(
             orElse: _buildNotImplementedError,
-            homeLoadingState: _buildStoriesLoading,
-            homeInitState: _buildStoriesLoading,
+            homeLoadingState: () => _buildStoriesLoading(isPortrait),
+            homeInitState: () => _buildStoriesLoading(isPortrait),
             homeErrorState: _buildErrorWidget,
             storiesLoadedState: (stories) =>
                 _buildStoriesList(stories, isPortrait));
@@ -101,8 +104,9 @@ class _HomeScreenMobileState extends State<HomeScreenMobile> {
 
   Widget _buildNotImplementedError() => const ScreenNotImplementedErrorWidget();
 
-  Widget _buildStoriesLoading() => SizedBox(
-        height: 75.sp,
+  Widget _buildStoriesLoading(bool isPortrait) => Container(
+        margin: EdgeInsets.only(bottom: 10.sp, top: 10.sp),
+        height: isPortrait ? 75.sp : 40.sp,
         child: Shimmer.fromColors(
           baseColor: Colors.grey[300]!,
           highlightColor: Colors.grey[100]!,

@@ -76,7 +76,6 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ],
             child: Container(
-              // padding: EdgeInsets.all(AppConstants.screenPadding),
               child: ScreenTypeLayout.builder(
                 mobile: (_) => const HomeScreenMobile(),
                 tablet: (_) => const HomeScreenTablet(),

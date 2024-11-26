@@ -61,6 +61,7 @@ class _ProfileScreenContentState extends State<ProfileScreenContent> {
   Widget _buildProfile() {
     return Column(
       children: [
+        12.verticalSpace,
         _buildTopBar(),
         12.verticalSpace,
         if (isPortrait) ...[
@@ -159,7 +160,7 @@ class _ProfileScreenContentState extends State<ProfileScreenContent> {
             Icons.arrow_back,
             size: iconSize,
           ),
-          4.horizontalSpace,
+          2.horizontalSpace,
           Text(
             "Explore",
             style: TextThemeStyles.robotoRegular.copyWith(

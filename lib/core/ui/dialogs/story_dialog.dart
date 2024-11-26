@@ -25,7 +25,7 @@ Future<void> showStoryDialog({
     transitionDuration: const Duration(milliseconds: 300),
     pageBuilder: (context, animation1, animation2) {
       return Padding(
-        padding: EdgeInsets.symmetric(horizontal: 0.3.sw),
+        padding: EdgeInsets.symmetric(horizontal: isTablet ? 0.3.sw : 0),
         child: StoryDialog(story: story, isTablet: isTablet),
       );
     },

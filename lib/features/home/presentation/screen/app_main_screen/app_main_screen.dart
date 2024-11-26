@@ -153,7 +153,8 @@ class _AppMainScreenState extends State<AppMainScreen> {
     return Row(
       children: [
         NavigationRail(
-          useIndicator: true,
+          useIndicator: false,
+          extended: false,
           destinations: _buildNavigationDestinations(),
           selectedIndex: sn.selectedIndex,
           onDestinationSelected: sn.onDestinationSelected,
@@ -176,20 +177,52 @@ class _AppMainScreenState extends State<AppMainScreen> {
   }
 
   List<NavigationRailDestination> _buildNavigationDestinations() {
-    return const <NavigationRailDestination>[
+    double iconSize = 8.sp;
+    Color iconColor = AppColors.navBarIconColor;
+    return <NavigationRailDestination>[
       NavigationRailDestination(
-        icon: Icon(Icons.home_outlined),
-        selectedIcon: Icon(Icons.home_filled),
+        icon: CustomImage.asset(
+          AppConstants.SVG_HOUSE_OUTLINE,
+          width: iconSize,
+          height: iconSize,
+          color: iconColor,
+        ),
+        selectedIcon: CustomImage.asset(
+          AppConstants.SVG_HOUSE_SOLID,
+          width: iconSize,
+          height: iconSize,
+          color: iconColor,
+        ),
         label: Text('Home'),
       ),
       NavigationRailDestination(
-        icon: Icon(Icons.explore_outlined),
-        selectedIcon: Icon(Icons.explore),
+        icon: CustomImage.asset(
+          AppConstants.SVG_COMPASS_OUTLINE,
+          width: iconSize,
+          height: iconSize,
+          color: iconColor,
+        ),
+        selectedIcon: CustomImage.asset(
+          AppConstants.SVG_COMPASS_SOLID,
+          width: iconSize,
+          height: iconSize,
+          color: iconColor,
+        ),
         label: Text('compass'),
       ),
       NavigationRailDestination(
-        icon: Icon(Icons.person_outline),
-        selectedIcon: Icon(Icons.person),
+        icon: CustomImage.asset(
+          AppConstants.SVG_CIRCLE_USER_OUTLINE,
+          width: iconSize,
+          height: iconSize,
+          color: iconColor,
+        ),
+        selectedIcon: CustomImage.asset(
+          AppConstants.SVG_CIRCLE_USER_SOLID,
+          width: iconSize,
+          height: iconSize,
+          color: iconColor,
+        ),
         label: Text('profile'),
       ),
     ];
